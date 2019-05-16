@@ -26,14 +26,13 @@ public class Main extends Application
 
         Group group = new Group(mainRoot);
 
-        Scene mainScene = new Scene(group, screenSize.width, screenSize.height, Color.BLACK);
+//        Scene mainScene = new Scene(group, screenSize.width, screenSize.height, Color.BLACK);
+        Scene mainScene = new Scene(group);
 
         stage.setScene(mainScene);
         stage.show();
+        System.out.println(screenSize);
     }
 
-    public static void main(String[] args)
-    {
-        launch(args);
-    }
+    public static void main(String[] args) { launch(args); }
 }
