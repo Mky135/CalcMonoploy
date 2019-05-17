@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -12,20 +15,43 @@
          <image>
             <Image url="@Board.png" />
          </image></ImageView>
-      <Button fx:id="b1House" graphicTextGap="0.0" layoutX="75.0" layoutY="570.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" onMouseClicked="#setQuestion" />
-      <Button fx:id="b1Hotel" layoutX="75.0" layoutY="596.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" onMouseClicked="#setQuestion" />
-      <Button fx:id="b2House1" graphicTextGap="0.0" layoutX="75.0" layoutY="452.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" onMouseClicked="#setQuestion" />
-      <Button fx:id="b2Hotel1" layoutX="75.0" layoutY="478.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" onMouseClicked="#setQuestion" />
-      <AnchorPane fx:id="problemPane" layoutX="97.0" layoutY="97.0" prefHeight="530.0" prefWidth="527.0">
+      <Button fx:id="b1House" graphicTextGap="0.0" layoutX="75.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="b1Hotel" layoutX="75.0" layoutY="596.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="b2House" graphicTextGap="0.0" layoutX="75.0" layoutY="452.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="b2Hotel" layoutX="75.0" layoutY="478.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <AnchorPane fx:id="problemPane" layoutX="97.0" layoutY="100.0" prefHeight="525.0" prefWidth="527.0" style="-fx-background-color: White;">
          <children>
             <!--<fx:define>-->
                <!--<Image fx:id="btnImage" url="@CloseButton.png" />-->
             <!--</fx:define>-->
-            <Button mnemonicParsing="false" prefHeight="20" prefWidth="20" onMouseClicked="#close">
+            <Button mnemonicParsing="false" onMouseClicked="#close" prefHeight="20" prefWidth="20">
                <!--<graphic>-->
                   <!--<ImageView image="$btnImage" fitHeight="20" fitWidth="20"/>-->
                <!--</graphic>-->
             </Button>
+            <Label alignment="CENTER" layoutX="128.0" layoutY="72.0" prefHeight="89.0" prefWidth="271.0" text="Question:">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <Label fx:id="question" alignment="CENTER" layoutX="4.0" layoutY="173.0" prefHeight="70.0" prefWidth="518.0" text="1+1=1" wrapText="true">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Button  layoutX="222.0" layoutY="263.0" mnemonicParsing="false" text="Answer" onAction="#showAnswer">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="answer" alignment="CENTER" layoutX="2.0" layoutY="325.0" prefHeight="70.0" prefWidth="527.0" text="2" wrapText="true">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Button fx:id="wrongButton" alignment="CENTER" layoutX="102.0" layoutY="429.0" mnemonicParsing="false" text="Wrong" onMouseClicked="#close"/>
+            <Button fx:id="correctButton" alignment="CENTER" layoutX="372.0" layoutY="429.0" mnemonicParsing="false" text="Correct" onMouseClicked="#correct"/>
+            <Line fx:id="line" endX="524.0" layoutX="1.0" layoutY="316.0" strokeWidth="3.0" />
          </children>
       </AnchorPane>
    </children>
