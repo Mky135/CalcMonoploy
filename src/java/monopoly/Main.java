@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -31,7 +30,6 @@ public class Main extends Application
 
         stage.setScene(mainScene);
         stage.show();
-        System.out.println(screenSize);
     }
 
     public static void main(String[] args) { launch(args); }

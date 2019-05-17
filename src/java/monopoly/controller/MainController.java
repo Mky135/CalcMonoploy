@@ -5,8 +5,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import javax.imageio.ImageIO;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -18,9 +16,8 @@ public class MainController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        URL url = getClass().getClassLoader().getResource("monopoly/NumBoard.png");
+        URL url = getClass().getClassLoader().getResource("monopoly/Board.png");
 
-        System.out.println(url);
         Image image = new Image(url.toString());
 
         imageView.setImage(image);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.ImageView?>
@@ -8,6 +8,25 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="718.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="monopoly.controller.MainController">
    <children>
-      <ImageView fx:id="imageView" fitHeight="750.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageView" fitHeight="750.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Board.png" />
+         </image></ImageView>
+      <Button fx:id="b1House" graphicTextGap="0.0" layoutX="75.0" layoutY="570.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" onMouseClicked="#setQuestion" />
+      <Button fx:id="b1Hotel" layoutX="75.0" layoutY="596.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" onMouseClicked="#setQuestion" />
+      <Button fx:id="b2House1" graphicTextGap="0.0" layoutX="75.0" layoutY="452.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" onMouseClicked="#setQuestion" />
+      <Button fx:id="b2Hotel1" layoutX="75.0" layoutY="478.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" onMouseClicked="#setQuestion" />
+      <AnchorPane fx:id="problemPane" layoutX="97.0" layoutY="97.0" prefHeight="530.0" prefWidth="527.0">
+         <children>
+            <!--<fx:define>-->
+               <!--<Image fx:id="btnImage" url="@CloseButton.png" />-->
+            <!--</fx:define>-->
+            <Button mnemonicParsing="false" prefHeight="20" prefWidth="20" onMouseClicked="#close">
+               <!--<graphic>-->
+                  <!--<ImageView image="$btnImage" fitHeight="20" fitWidth="20"/>-->
+               <!--</graphic>-->
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
