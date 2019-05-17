@@ -18,7 +18,7 @@ public class MainController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        URL url = getClass().getClassLoader().getResource("monopoly/NumBoard.jpg");
+        URL url = getClass().getClassLoader().getResource("monopoly/NumBoard.png");
 
         System.out.println(url);
         Image image = new Image(url.toString());
