@@ -8,6 +8,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
+import monopoly.Main;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -58,6 +59,8 @@ public class MainController implements Initializable
         System.out.println(event.getSource().toString());
         problemPane.setVisible(true);
         button = event.getSource().toString();
+        question.setText(Main.questionFile.getLine(0));
+        answer.setText(Main.answersFile.getLine(0));
 
     }
 

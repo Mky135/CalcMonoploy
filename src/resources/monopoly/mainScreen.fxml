@@ -42,13 +42,13 @@
 
       <AnchorPane fx:id="problemPane" layoutX="97.0" layoutY="100.0" prefHeight="525.0" prefWidth="527.0" style="-fx-background-color: White;">
          <children>
-            <!--<fx:define>-->
-               <!--<Image fx:id="btnImage" url="@CloseButton.png" />-->
-            <!--</fx:define>-->
+            <fx:define>
+               <Image fx:id="btnImage" url="@CloseButton.png" />
+            </fx:define>
             <Button mnemonicParsing="false" onMouseClicked="#close" prefHeight="20" prefWidth="20">
-               <!--<graphic>-->
-                  <!--<ImageView image="$btnImage" fitHeight="20" fitWidth="20"/>-->
-               <!--</graphic>-->
+               <graphic>
+                  <ImageView image="$btnImage" fitHeight="20" fitWidth="20"/>
+               </graphic>
             </Button>
             <Label alignment="CENTER" layoutX="128.0" layoutY="72.0" prefHeight="89.0" prefWidth="271.0" text="Question:">
                <font>

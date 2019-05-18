@@ -9,15 +9,14 @@ import javafx.stage.Stage;
 import monopoly.util.FileHandler;
 
 import java.awt.*;
-import java.util.Objects;
 
 public class Main extends Application
 {
     private static Stage stage;
     private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-    public FileHandler questionFile;
-    public FileHandler solutionsFile;
+    public static FileHandler questionFile;
+    public static FileHandler answersFile;
 
     @Override
     public void start(Stage primaryStage) throws Exception
@@ -35,26 +34,15 @@ public class Main extends Application
 
         stage.setScene(mainScene);
         stage.show();
-
-        questionFile = new FileHandler(Objects.requireNonNull(getClass().getClassLoader().getResource("monopoly/Questions.txt")).getPath());
-        solutionsFile = new FileHandler(Objects.requireNonNull(getClass().getClassLoader().getResource("monopoly/Answers.txt")).getPath());
+        
+        questionFile = new FileHandler(getClass().getClassLoader().getResource("monopoly/Questions.txt").toURI());
+        answersFile = new FileHandler(getClass().getClassLoader().getResource("monopoly/Answers.txt").toURI());
     }
 
 
 
     public static void main(String[] args)
     {
-        StringBuilder stringBuilder = new StringBuilder();
-
-        for (int i = 3; i <= 22; i++) {
-            stringBuilder.append("@FXML private Button b").append(i).append("House;").append("\n");
-        }
-
-        for (int i = 3; i <= 22; i++) {
-            stringBuilder.append("@FXML private Button b").append(i).append("Hotel;").append("\n");
-        }
-
-        System.out.println(stringBuilder.toString());
         launch(args);
     }
 }
