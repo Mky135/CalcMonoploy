@@ -6,17 +6,10 @@ import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import monopoly.util.FileHandler;
-
-import java.awt.*;
 
 public class Main extends Application
 {
     private static Stage stage;
-    private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-
-    public static FileHandler questionFile;
-    public static FileHandler answersFile;
 
     @Override
     public void start(Stage primaryStage) throws Exception
@@ -34,9 +27,6 @@ public class Main extends Application
 
         stage.setScene(mainScene);
         stage.show();
-        
-        questionFile = new FileHandler(getClass().getClassLoader().getResource("monopoly/Questions.txt").toURI());
-        answersFile = new FileHandler(getClass().getClassLoader().getResource("monopoly/Answers.txt").toURI());
     }
 
 

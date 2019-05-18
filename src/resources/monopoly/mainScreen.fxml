@@ -50,7 +50,7 @@
                   <ImageView image="$btnImage" fitHeight="20" fitWidth="20"/>
                </graphic>
             </Button>
-            <Label alignment="CENTER" layoutX="128.0" layoutY="72.0" prefHeight="89.0" prefWidth="271.0" text="Question:">
+            <Label alignment="CENTER" layoutX="105.0" layoutY="72.0" prefHeight="89.0" prefWidth="294.0" text="Question:">
                <font>
                   <Font size="64.0" />
                </font>
