@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="718.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="monopoly.controller.MainController">
+<AnchorPane prefHeight="700.0" prefWidth="718.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="monopoly.controller.MainController">
    <children>
       <ImageView fx:id="imageView" fitHeight="750.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,6 +18,26 @@
       <Button fx:id="b1Hotel" layoutX="75.0" layoutY="596.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
       <Button fx:id="b2House" graphicTextGap="0.0" layoutX="75.0" layoutY="452.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
       <Button fx:id="b2Hotel" layoutX="75.0" layoutY="478.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="lb1House" graphicTextGap="0.0" layoutX="75.0" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="lb1Hotel" layoutX="75.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="lb2House" graphicTextGap="0.0" layoutX="75.0" layoutY="157.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="lb2Hotel" layoutX="75.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="lb3House" graphicTextGap="0.0" layoutX="75.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="lb3Hotel" layoutX="75.0" layoutY="127.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+
+      <Button fx:id="y3House" graphicTextGap="0.0" layoutX="628.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="y3Hotel" layoutX="628.0" layoutY="596.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="y2House" graphicTextGap="0.0" layoutX="628.0" layoutY="452.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="y2Hotel" layoutX="628.0" layoutY="478.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="y1House" graphicTextGap="0.0" layoutX="628.0" layoutY="394.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="y1Hotel" layoutX="628.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="r3House" graphicTextGap="0.0" layoutX="628.0" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="r3Hotel" layoutX="628.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="r2House" graphicTextGap="0.0" layoutX="628.0" layoutY="217.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="r2Hotel" layoutX="628.0" layoutY="244.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="r1House" graphicTextGap="0.0" layoutX="628.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="r1Hotel" layoutX="628.0" layoutY="128.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+
       <AnchorPane fx:id="problemPane" layoutX="97.0" layoutY="100.0" prefHeight="525.0" prefWidth="527.0" style="-fx-background-color: White;">
          <children>
             <!--<fx:define>-->
@@ -39,7 +58,7 @@
                   <Font size="48.0" />
                </font>
             </Label>
-            <Button  layoutX="222.0" layoutY="263.0" mnemonicParsing="false" text="Answer" onAction="#showAnswer">
+            <Button layoutX="222.0" layoutY="263.0" mnemonicParsing="false" onAction="#showAnswer" text="Answer">
                <font>
                   <Font size="18.0" />
                </font>
@@ -49,8 +68,8 @@
                   <Font size="48.0" />
                </font>
             </Label>
-            <Button fx:id="wrongButton" alignment="CENTER" layoutX="102.0" layoutY="429.0" mnemonicParsing="false" text="Wrong" onMouseClicked="#close"/>
-            <Button fx:id="correctButton" alignment="CENTER" layoutX="372.0" layoutY="429.0" mnemonicParsing="false" text="Correct" onMouseClicked="#correct"/>
+            <Button fx:id="wrongButton" alignment="CENTER" layoutX="102.0" layoutY="429.0" mnemonicParsing="false" onMouseClicked="#close" text="Wrong" />
+            <Button fx:id="correctButton" alignment="CENTER" layoutX="372.0" layoutY="429.0" mnemonicParsing="false" onMouseClicked="#correct" text="Correct" />
             <Line fx:id="line" endX="524.0" layoutX="1.0" layoutY="316.0" strokeWidth="3.0" />
          </children>
       </AnchorPane>
