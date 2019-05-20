@@ -47,7 +47,7 @@
             </fx:define>
             <Button mnemonicParsing="false" onMouseClicked="#close" prefHeight="20" prefWidth="20">
                <graphic>
-                  <ImageView fitHeight="20" fitWidth="20" />
+                   <ImageView image="$btnImage" fitHeight="20" fitWidth="20"/>
                </graphic>
             </Button>
             <Label alignment="CENTER" layoutX="105.0" layoutY="72.0" prefHeight="89.0" prefWidth="294.0" text="Question:">
