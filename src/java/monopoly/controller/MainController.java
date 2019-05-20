@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -23,10 +24,10 @@ public class MainController implements Initializable
     private AnchorPane problemPane;
 
     @FXML
-    private Label question;
+    private ImageView question;
 
     @FXML
-    private Label answer;
+    private ImageView answer;
 
     @FXML
     private Line line;
@@ -39,14 +40,11 @@ public class MainController implements Initializable
 
     @FXML private Button b1House; @FXML private Button b1Hotel; @FXML private Button b2House; @FXML private Button b2Hotel;
 
-    private FileHandler questionFile;
-    private FileHandler answersFile;
-
     private HashMap<String, Button> buttonMap = new HashMap<>();
 
-    private HashMap<Button, String> questionMap = new HashMap<>();
+    private HashMap<Button, Image> questionMap = new HashMap<>();
 
-    private HashMap<Button, String> answerMap = new HashMap<>();
+    private HashMap<Button, Image> answerMap = new HashMap<>();
 
     private ArrayList<Button> buttons = new ArrayList<>();
 
@@ -70,8 +68,8 @@ public class MainController implements Initializable
         System.out.println(event.getSource().toString());
         problemPane.setVisible(true);
         button = event.getSource().toString();
-        question.setText(questionMap.get(buttonMap.get(button)));
-        answer.setText(answerMap.get(buttonMap.get(button)));
+        question.setImage(questionMap.get(buttonMap.get(button)));
+        answer.setImage(answerMap.get(buttonMap.get(button)));
 
     }
 
@@ -99,16 +97,6 @@ public class MainController implements Initializable
         imageView.setFitWidth(720);
 
         close();
-
-        try
-        {
-            questionFile = new FileHandler(Objects.requireNonNull(getClass().getClassLoader().getResource("monopoly/Questions.txt")).toURI());
-            answersFile = new FileHandler(Objects.requireNonNull(getClass().getClassLoader().getResource("monopoly/Answers.txt")).toURI());
-        }
-        catch(URISyntaxException e)
-        {
-            e.printStackTrace();
-        }
 
 
         setButtonMap();
@@ -180,21 +168,19 @@ public class MainController implements Initializable
 
     private void setQuestionMap()
     {
-        setMap(questionFile, questionMap);
+        setMap(questionMap);
     }
 
     private void setAnswerMap()
     {
-        setMap(answersFile, answerMap);
+        setMap(answerMap);
     }
 
-    private void setMap(FileHandler file, HashMap<Button, String> map)
+    private void setMap(HashMap<Button, Image> map)
     {
         for(int i = 0; i < buttons.size(); i++)
         {
-            String question = file.getLine(i);
-            Button button = buttons.get(i);
-            map.put(button, question);
+           //Todo: Set map with images
         }
     }
 

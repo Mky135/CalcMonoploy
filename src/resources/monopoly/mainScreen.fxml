@@ -47,7 +47,7 @@
             </fx:define>
             <Button mnemonicParsing="false" onMouseClicked="#close" prefHeight="20" prefWidth="20">
                <graphic>
-                  <ImageView image="$btnImage" fitHeight="20" fitWidth="20"/>
+                  <ImageView fitHeight="20" fitWidth="20" />
                </graphic>
             </Button>
             <Label alignment="CENTER" layoutX="105.0" layoutY="72.0" prefHeight="89.0" prefWidth="294.0" text="Question:">
@@ -55,24 +55,16 @@
                   <Font size="64.0" />
                </font>
             </Label>
-            <Label fx:id="question" alignment="CENTER" layoutX="4.0" layoutY="173.0" prefHeight="70.0" prefWidth="518.0" text="1+1=1" wrapText="true">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Label>
             <Button layoutX="222.0" layoutY="263.0" mnemonicParsing="false" onAction="#showAnswer" text="Answer">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label fx:id="answer" alignment="CENTER" layoutX="2.0" layoutY="325.0" prefHeight="70.0" prefWidth="527.0" text="2" wrapText="true">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Label>
             <Button fx:id="wrongButton" alignment="CENTER" layoutX="102.0" layoutY="429.0" mnemonicParsing="false" onMouseClicked="#close" text="Wrong" />
             <Button fx:id="correctButton" alignment="CENTER" layoutX="372.0" layoutY="429.0" mnemonicParsing="false" onMouseClicked="#correct" text="Correct" />
             <Line fx:id="line" endX="524.0" layoutX="1.0" layoutY="316.0" strokeWidth="3.0" />
+            <ImageView fx:id="question" fitHeight="93.0" fitWidth="510.0" layoutX="8.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="answer" fitHeight="93.0" fitWidth="510.0" layoutX="8.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
 
