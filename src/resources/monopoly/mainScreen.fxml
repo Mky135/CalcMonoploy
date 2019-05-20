@@ -10,6 +10,10 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="718.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="monopoly.controller.MainController">
    <children>
+      <fx:define>
+         <Image fx:id="chanceImage" url="@chance.png" />
+         <Image fx:id="chestImage" url="@chest.jpg" />
+      </fx:define>
       <ImageView fx:id="imageView" fitHeight="750.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board.png" />
@@ -40,16 +44,29 @@
       <Button fx:id="r1House" graphicTextGap="0.0" layoutX="628.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
       <Button fx:id="r1Hotel" layoutX="628.0" layoutY="128.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
 
+      <Button mnemonicParsing="false" layoutX="132" layoutY="480" prefHeight="85" prefWidth="130" rotate="45">
+         <!--<graphic>-->
+            <!--<ImageView image="$chanceImage" fitHeight="85" fitWidth="130"/>-->
+         <!--</graphic>-->
+      </Button>
+
+      <Button mnemonicParsing="false" layoutX="455" layoutY="155" prefHeight="85" prefWidth="130" rotate="-135">
+         <!--<graphic>-->
+            <!--<ImageView image="$chestImage" fitHeight="85" fitWidth="130"/>-->
+         <!--</graphic>-->
+      </Button>
+
       <AnchorPane fx:id="problemPane" layoutX="97.0" layoutY="100.0" prefHeight="525.0" prefWidth="527.0" style="-fx-background-color: White;">
          <children>
             <fx:define>
                <Image fx:id="btnImage" url="@CloseButton.png" />
             </fx:define>
             <Button mnemonicParsing="false" onMouseClicked="#close" prefHeight="20" prefWidth="20">
-               <graphic>
-                   <ImageView image="$btnImage" fitHeight="20" fitWidth="20"/>
-               </graphic>
+               <!--<graphic>-->
+                   <!--<ImageView image="$btnImage" fitHeight="20" fitWidth="20"/>-->
+               <!--</graphic>-->
             </Button>
+
             <Label alignment="CENTER" layoutX="105.0" layoutY="72.0" prefHeight="89.0" prefWidth="294.0" text="Question:">
                <font>
                   <Font size="64.0" />
@@ -60,6 +77,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
+
             <Button fx:id="wrongButton" alignment="CENTER" layoutX="102.0" layoutY="429.0" mnemonicParsing="false" onMouseClicked="#close" text="Wrong" />
             <Button fx:id="correctButton" alignment="CENTER" layoutX="372.0" layoutY="429.0" mnemonicParsing="false" onMouseClicked="#correct" text="Correct" />
             <Line fx:id="line" endX="524.0" layoutX="1.0" layoutY="316.0" strokeWidth="3.0" />
