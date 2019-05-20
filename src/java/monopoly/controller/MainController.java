@@ -3,12 +3,12 @@ package monopoly.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
+import monopoly.Main;
 
 import java.net.URL;
 import java.util.*;
@@ -44,6 +44,8 @@ public class MainController implements Initializable
 
     private HashMap<Button, Image> answerMap = new HashMap<>();
 
+    private HashMap<Button, Boolean> graphMap = new HashMap<>();
+
     private ArrayList<Button> buttons = new ArrayList<>();
 
     private String button;
@@ -56,18 +58,22 @@ public class MainController implements Initializable
         line.setVisible(false);
         correctButton.setVisible(false);
         wrongButton.setVisible(false);
+        Main.showGraphStage(false);
     }
 
     @FXML
     private void setQuestion(MouseEvent event)
     {
-        setQuestionMap();
-        setAnswerMap();
         System.out.println(event.getSource().toString());
         problemPane.setVisible(true);
         button = event.getSource().toString();
+
         question.setImage(questionMap.get(buttonMap.get(button)));
         answer.setImage(answerMap.get(buttonMap.get(button)));
+        if(graphMap.get(buttonMap.get(button)))
+        {
+            Main.showGraphStage(true);
+        }
     }
 
     @FXML
@@ -98,6 +104,7 @@ public class MainController implements Initializable
         setButtonMap();
         setQuestionMap();
         setAnswerMap();
+        setGraphMap();
     }
 
     private void setButtonMap()
@@ -197,7 +204,18 @@ public class MainController implements Initializable
         {
            //Todo: Set map with images
             map.put(buttons.get(i), new Image(String.valueOf(getClass().getClassLoader().getResource("monopoly/" + directory + "/0.png"))));
+//            map.put(buttons.get(i), new Image(String.valueOf(getClass().getClassLoader().getResource("monopoly/" + directory + "/" + i +".png"))));
         }
+    }
+
+    private void setGraphMap()
+    {
+       for(Button button : buttons)
+       {
+           graphMap.put(button, false);
+       }
+
+       graphMap.put(buttons.get(1), true);
     }
 
     @FXML private Button lb1Base;@FXML private Button lb2Base;@FXML private Button lb3Base;@FXML private Button p1Base;@FXML private Button p2Base;@FXML private Button p3Base;@FXML private Button o1Base;@FXML private Button o2Base;@FXML private Button o3Base;@FXML private Button r1Base;@FXML private Button r2Base;@FXML private Button r3Base;@FXML private Button y1Base;@FXML private Button y2Base;@FXML private Button y3Base;@FXML private Button g1Base;@FXML private Button g2Base;@FXML private Button g3Base;@FXML private Button bl1Base;@FXML private Button bl2Base;
