@@ -46,6 +46,8 @@ public class MainController implements Initializable
 
     private HashMap<Button, Boolean> graphMap = new HashMap<>();
 
+    private HashMap<Button, Image> graphImageMap = new HashMap<>();
+
     private ArrayList<Button> buttons = new ArrayList<>();
 
     private String button;
@@ -67,12 +69,13 @@ public class MainController implements Initializable
         System.out.println(event.getSource().toString());
         problemPane.setVisible(true);
         button = event.getSource().toString();
-
-        question.setImage(questionMap.get(buttonMap.get(button)));
-        answer.setImage(answerMap.get(buttonMap.get(button)));
-        if(graphMap.get(buttonMap.get(button)))
+        Button button = buttonMap.get(this.button);
+        question.setImage(questionMap.get(button));
+        answer.setImage(answerMap.get(button));
+        if(graphMap.get(button))
         {
             Main.showGraphStage(true);
+            GraphController.changeGraphic(graphImageMap.get(button));
         }
     }
 
@@ -203,7 +206,7 @@ public class MainController implements Initializable
         for(int i = 0; i < buttons.size(); i++)
         {
            //Todo: Set map with images
-            map.put(buttons.get(i), new Image(String.valueOf(getClass().getClassLoader().getResource("monopoly/" + directory + "/0.png"))));
+            map.put(buttons.get(i), getResourceImage("monopoly/" + directory + "/0.png"));
 //            map.put(buttons.get(i), new Image(String.valueOf(getClass().getClassLoader().getResource("monopoly/" + directory + "/" + i +".png"))));
         }
     }
@@ -216,6 +219,12 @@ public class MainController implements Initializable
        }
 
        graphMap.put(buttons.get(1), true);
+       graphImageMap.put(buttons.get(1), getResourceImage("monopoly/graphs/0.png"));
+    }
+
+    private Image getResourceImage(String image)
+    {
+        return new Image(String.valueOf(getClass().getClassLoader().getResource(image)));
     }
 
     @FXML private Button lb1Base;@FXML private Button lb2Base;@FXML private Button lb3Base;@FXML private Button p1Base;@FXML private Button p2Base;@FXML private Button p3Base;@FXML private Button o1Base;@FXML private Button o2Base;@FXML private Button o3Base;@FXML private Button r1Base;@FXML private Button r2Base;@FXML private Button r3Base;@FXML private Button y1Base;@FXML private Button y2Base;@FXML private Button y3Base;@FXML private Button g1Base;@FXML private Button g2Base;@FXML private Button g3Base;@FXML private Button bl1Base;@FXML private Button bl2Base;
