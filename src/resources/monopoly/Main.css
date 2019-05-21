@@ -1,0 +1,11 @@
+.button:hover
+{
+    -fx-border-width: 2px;
+    -fx-border-color: blue;
+}
+
+.button:focused
+{
+    -fx-border-width: 2px;
+    -fx-border-color: yellow;
+}

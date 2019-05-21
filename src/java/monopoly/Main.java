@@ -18,7 +18,7 @@ public class Main extends Application
         Stage stage = primaryStage;
         graphStage = new Stage();
 
-        stage.setTitle("Calculus Monopoly");
+        stage.setTitle("Calcopoly");
         stage.toFront();
 
         graphStage.setTitle("Graphic");
