@@ -17,46 +17,58 @@
       <ImageView fx:id="imageView" fitHeight="750.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board.png" />
-         </image></ImageView>
+         </image>
+      </ImageView>
+      <Button fx:id="b1Base" layoutX="18.0" layoutY="572.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #864c38;" />
       <Button fx:id="b1House" graphicTextGap="0.0" layoutX="75.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
       <Button fx:id="b1Hotel" layoutX="75.0" layoutY="596.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="b2Base" layoutX="18.0" layoutY="454.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #864c38;" />
       <Button fx:id="b2House" graphicTextGap="0.0" layoutX="75.0" layoutY="452.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
       <Button fx:id="b2Hotel" layoutX="75.0" layoutY="478.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
 
+      <Button fx:id="lb1Base" layoutX="18.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #acdcf0;" />
       <Button fx:id="lb1House" graphicTextGap="0.0" layoutX="75.0" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
       <Button fx:id="lb1Hotel" layoutX="75.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="lb2Base" layoutX="18.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #acdcf0;" />
       <Button fx:id="lb2House" graphicTextGap="0.0" layoutX="75.0" layoutY="157.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
       <Button fx:id="lb2Hotel" layoutX="75.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="lb3Base" layoutX="18.0" layoutY="101.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #acdcf0;" />
       <Button fx:id="lb3House" graphicTextGap="0.0" layoutX="75.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
       <Button fx:id="lb3Hotel" layoutX="75.0" layoutY="127.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
 
-      <Button fx:id="y3House" graphicTextGap="0.0" layoutX="628.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
-      <Button fx:id="y3Hotel" layoutX="628.0" layoutY="596.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
-      <Button fx:id="y2House" graphicTextGap="0.0" layoutX="628.0" layoutY="452.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
-      <Button fx:id="y2Hotel" layoutX="628.0" layoutY="478.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="y1Base" layoutX="653.0" layoutY="395.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #fff004;" />
       <Button fx:id="y1House" graphicTextGap="0.0" layoutX="628.0" layoutY="394.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
       <Button fx:id="y1Hotel" layoutX="628.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="y2Base" layoutX="653.0" layoutY="454.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #fff004;" />
+      <Button fx:id="y2House" graphicTextGap="0.0" layoutX="628.0" layoutY="452.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="y2Hotel" layoutX="628.0" layoutY="478.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="y3Base" layoutX="653.0" layoutY="572.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #fff004;" />
+      <Button fx:id="y3House" graphicTextGap="0.0" layoutX="628.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="y3Hotel" layoutX="628.0" layoutY="596.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
 
-      <Button fx:id="r3House" graphicTextGap="0.0" layoutX="628.0" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
-      <Button fx:id="r3Hotel" layoutX="628.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
-      <Button fx:id="r2House" graphicTextGap="0.0" layoutX="628.0" layoutY="217.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
-      <Button fx:id="r2Hotel" layoutX="628.0" layoutY="244.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="r1Base" layoutX="653.0" layoutY="101.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #db2428;" />
       <Button fx:id="r1House" graphicTextGap="0.0" layoutX="628.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
       <Button fx:id="r1Hotel" layoutX="628.0" layoutY="128.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="r2Base" layoutX="653.0" layoutY="218.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #db2428;" />
+      <Button fx:id="r2House" graphicTextGap="0.0" layoutX="628.0" layoutY="217.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="r2Hotel" layoutX="628.0" layoutY="244.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
+      <Button fx:id="r3Base" layoutX="653.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #db2428;" />
+      <Button fx:id="r3House" graphicTextGap="0.0" layoutX="628.0" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
+      <Button fx:id="r3Hotel" layoutX="628.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
 
-      <Button mnemonicParsing="false" layoutX="127" layoutY="477" prefHeight="87" prefWidth="132" rotate="45">
-         <graphic>
-            <ImageView image="$chanceImage" fitHeight="87" fitWidth="132"  preserveRatio="true"/>
-         </graphic>
+      <Button layoutX="127" layoutY="477" mnemonicParsing="false" prefHeight="87" prefWidth="132" rotate="45">
+         <!--<graphic>-->
+            <!--<ImageView image="$chanceImage" fitHeight="87" fitWidth="132"  preserveRatio="true"/>-->
+         <!--</graphic>-->
       </Button>
 
-      <Button mnemonicParsing="false" layoutX="450" layoutY="154" prefHeight="87" prefWidth="132" rotate="-135">
-         <graphic>
-            <ImageView image="$chestImage" fitHeight="87" fitWidth="132" preserveRatio="true"/>
-         </graphic>
+      <Button layoutX="450" layoutY="154" mnemonicParsing="false" prefHeight="87" prefWidth="132" rotate="-135">
+         <!--<graphic>-->
+            <!--<ImageView image="$chestImage" fitHeight="87" fitWidth="132" preserveRatio="true"/>-->
+         <!--</graphic>-->
       </Button>
 
-      <AnchorPane fx:id="problemPane" layoutX="97.0" layoutY="100.0" prefHeight="525.0" prefWidth="527.0" style="-fx-background-color: White;">
+      <AnchorPane fx:id="problemPane" layoutX="96.0" layoutY="98.0" prefHeight="525.0" prefWidth="527.0" style="-fx-background-color: White;">
          <children>
             <fx:define>
                <Image fx:id="btnImage" url="@CloseButton.png" />
@@ -86,31 +98,42 @@
          </children>
       </AnchorPane>
 
+      <Button fx:id="p1Base" layoutX="100.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c53884;" />
       <Button fx:id="p1House" graphicTextGap="0.0" layoutX="103.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
       <Button fx:id="p1Hotel" layoutX="130.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
+      <Button fx:id="p2Base" layoutX="217.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c53884;" />
       <Button fx:id="p2House" graphicTextGap="0.0" layoutX="220.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
       <Button fx:id="p2Hotel" layoutX="246.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
+      <Button fx:id="p3Base" layoutX="276.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #c53884;" />
       <Button fx:id="p3House" graphicTextGap="0.0" layoutX="281.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
       <Button fx:id="p3Hotel" layoutX="306.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
 
+      <Button fx:id="o1Base" layoutX="394.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #ec8b2c;" />
       <Button fx:id="o1House" graphicTextGap="0.0" layoutX="398.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
       <Button fx:id="o1Hotel" layoutX="425.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
+      <Button fx:id="o2Base" layoutX="512.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #ec8b2c;" />
       <Button fx:id="o2House" graphicTextGap="0.0" layoutX="515.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
       <Button fx:id="o2Hotel" layoutX="541.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
+      <Button fx:id="o3Base" layoutX="571.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #ec8b2c;" />
       <Button fx:id="o3House" graphicTextGap="0.0" layoutX="576.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
       <Button fx:id="o3Hotel" layoutX="601.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
 
-      <Button fx:id="bl2House" graphicTextGap="0.0" layoutX="103.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
-      <Button fx:id="bl2Hotel" layoutX="130.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
+      <Button fx:id="bl1Base" layoutX="218.0" layoutY="653.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #0066a4;" />
       <Button fx:id="bl1House" graphicTextGap="0.0" layoutX="220.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
       <Button fx:id="bl1Hotel" layoutX="246.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
+      <Button fx:id="bl2Base" layoutX="100.0" layoutY="653.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #0066a4;" />
+      <Button fx:id="bl2House" graphicTextGap="0.0" layoutX="103.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
+      <Button fx:id="bl2Hotel" layoutX="130.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
 
-      <Button fx:id="g3House" graphicTextGap="0.0" layoutX="398.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
-      <Button fx:id="g3Hotel" layoutX="425.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
-      <Button fx:id="g2House" graphicTextGap="0.0" layoutX="515.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
-      <Button fx:id="g2Hotel" layoutX="541.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
+      <Button fx:id="g1Base" layoutX="571.0" layoutY="653.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #13a857;" />
       <Button fx:id="g1House" graphicTextGap="0.0" layoutX="576.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
       <Button fx:id="g1Hotel" layoutX="601.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
+      <Button fx:id="g2Base" layoutX="512.0" layoutY="653.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #13a857;" />
+      <Button fx:id="g2House" graphicTextGap="0.0" layoutX="515.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
+      <Button fx:id="g2Hotel" layoutX="541.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
+      <Button fx:id="g3Base" layoutX="395.0" layoutY="653.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #13a857;" />
+      <Button fx:id="g3House" graphicTextGap="0.0" layoutX="398.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
+      <Button fx:id="g3Hotel" layoutX="425.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
 
    </children>
 </AnchorPane>
