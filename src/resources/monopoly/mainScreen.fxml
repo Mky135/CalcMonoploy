@@ -12,7 +12,7 @@
    <children>
       <fx:define>
          <Image fx:id="chanceImage" url="@chance.png" />
-         <Image fx:id="chestImage" url="@chest.jpg" />
+         <Image fx:id="chestImage" url="@chest.png" />
       </fx:define>
       <ImageView fx:id="imageView" fitHeight="750.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -44,16 +44,16 @@
       <Button fx:id="r1House" graphicTextGap="0.0" layoutX="628.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: GREEN;" />
       <Button fx:id="r1Hotel" layoutX="628.0" layoutY="128.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
 
-      <Button mnemonicParsing="false" layoutX="132" layoutY="480" prefHeight="85" prefWidth="130" rotate="45">
-         <!--<graphic>-->
-            <!--<ImageView image="$chanceImage" fitHeight="85" fitWidth="130"/>-->
-         <!--</graphic>-->
+      <Button mnemonicParsing="false" layoutX="127" layoutY="477" prefHeight="87" prefWidth="132" rotate="45">
+         <graphic>
+            <ImageView image="$chanceImage" fitHeight="87" fitWidth="132"  preserveRatio="true"/>
+         </graphic>
       </Button>
 
-      <Button mnemonicParsing="false" layoutX="455" layoutY="155" prefHeight="85" prefWidth="130" rotate="-135">
-         <!--<graphic>-->
-            <!--<ImageView image="$chestImage" fitHeight="85" fitWidth="130"/>-->
-         <!--</graphic>-->
+      <Button mnemonicParsing="false" layoutX="450" layoutY="154" prefHeight="87" prefWidth="132" rotate="-135">
+         <graphic>
+            <ImageView image="$chestImage" fitHeight="87" fitWidth="132" preserveRatio="true"/>
+         </graphic>
       </Button>
 
       <AnchorPane fx:id="problemPane" layoutX="97.0" layoutY="100.0" prefHeight="525.0" prefWidth="527.0" style="-fx-background-color: White;">
