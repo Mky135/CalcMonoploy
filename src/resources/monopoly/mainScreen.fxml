@@ -58,15 +58,15 @@
       <Button fx:id="r3Hotel" layoutX="625.0" layoutY="301.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.8" style="-fx-background-color: RED;" />
 
       <Button layoutX="127" layoutY="477" mnemonicParsing="false" prefHeight="87" prefWidth="132" rotate="45">
-         <!--<graphic>-->
-            <!--<ImageView image="$chanceImage" fitHeight="87" fitWidth="132"  preserveRatio="true"/>-->
-         <!--</graphic>-->
+         <graphic>
+            <ImageView image="$chanceImage" fitHeight="87" fitWidth="132"  preserveRatio="true"/>
+         </graphic>
       </Button>
 
       <Button layoutX="450" layoutY="154" mnemonicParsing="false" prefHeight="87" prefWidth="132" rotate="-135">
-         <!--<graphic>-->
-            <!--<ImageView image="$chestImage" fitHeight="87" fitWidth="132" preserveRatio="true"/>-->
-         <!--</graphic>-->
+         <graphic>
+            <ImageView image="$chestImage" fitHeight="87" fitWidth="132" preserveRatio="true"/>
+         </graphic>
       </Button>
 
       <AnchorPane fx:id="problemPane" layoutX="96.0" layoutY="98.0" prefHeight="525.0" prefWidth="525.0" style="-fx-background-color: White;">
@@ -75,9 +75,9 @@
                <Image fx:id="btnImage" url="@CloseButton.png" />
             </fx:define>
             <Button mnemonicParsing="false" onMouseClicked="#close" prefHeight="20" prefWidth="20">
-               <!--<graphic>-->
-                   <!--<ImageView image="$btnImage" fitHeight="20" fitWidth="20"/>-->
-               <!--</graphic>-->
+               <graphic>
+                   <ImageView image="$btnImage" fitHeight="20" fitWidth="20"/>
+               </graphic>
             </Button>
 
             <Label alignment="CENTER" layoutX="105.0" layoutY="72.0" prefHeight="89.0" prefWidth="294.0" text="Question:">
