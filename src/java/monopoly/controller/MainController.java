@@ -36,6 +36,8 @@ public class MainController implements Initializable
     @FXML
     private Button wrongButton;
 
+    @FXML private Button train1; @FXML private Button train2; @FXML private Button train3; @FXML private Button train4;
+
     @FXML private Button b1Base;@FXML private Button b1House; @FXML private Button b1Hotel; @FXML private Button b2Base;@FXML private Button b2House; @FXML private Button b2Hotel;
 
     private HashMap<String, Button> buttonMap = new HashMap<>();
@@ -47,6 +49,8 @@ public class MainController implements Initializable
     private HashMap<Button, Boolean> graphMap = new HashMap<>();
 
     private HashMap<Button, Image> graphImageMap = new HashMap<>();
+
+    private HashMap<Button, Image> trainAMap = new HashMap<>();
 
     private ArrayList<Button> buttons = new ArrayList<>();
 
@@ -66,12 +70,28 @@ public class MainController implements Initializable
     @FXML
     private void setQuestion(MouseEvent event)
     {
-        System.out.println(event.getSource().toString());
         problemPane.setVisible(true);
         button = event.getSource().toString();
         Button button = buttonMap.get(this.button);
         question.setImage(questionMap.get(button));
         answer.setImage(answerMap.get(button));
+        if(graphMap.get(button))
+        {
+            Main.showGraphStage(true);
+            GraphController.changeGraphic(graphImageMap.get(button));
+        }
+    }
+
+    @FXML
+    private void setTrainQuestion(MouseEvent event)
+    {
+//        System.out.println(event.getSource().toString());
+        problemPane.setVisible(true);
+        button = event.getSource().toString();
+        Button button = buttonMap.get(this.button);
+        question.setImage(getResourceImage("monopoly/answers/trains/blank.png"));
+        answer.setImage(trainAMap.get(button));
+
         if(graphMap.get(button))
         {
             Main.showGraphStage(true);
@@ -108,11 +128,12 @@ public class MainController implements Initializable
         setQuestionMap();
         setAnswerMap();
         setGraphMap();
+        setTrainAMap();
     }
 
     private void setButtonMap()
     {
-        setButtons(b1Base, b1House, b1Hotel, b2Base, b2House, b2Hotel, lb1Base, lb1House, lb1Hotel, lb2Base,lb2House, lb2Hotel, lb3Base,lb3House, lb3Hotel, p1Base, p1House, p1Hotel, p2Base, p2House, p2Hotel, p3Base, p3House, p3Hotel, o1Base, o1House, o1Hotel, o2Base, o2House, o2Hotel, o3Base, o3House, o3Hotel, r1Base, r1House, r1Hotel, r2Base, r2House, r2Hotel, r3Base, r3House, r3Hotel, y1Base, y1House, y1Hotel, y2Base, y2House, y2Hotel, y3Base, y3House, y3Hotel, g1Base, g1House, g1House, g2Base, g2House, g2Hotel, g3Base, g3House, g3Hotel, bl1Base, bl1House, bl1Hotel, bl2Base, bl2House, bl2Hotel);
+        setButtons(b1Base, b1House, b1Hotel, b2Base, b2House, b2Hotel, lb1Base, lb1House, lb1Hotel, lb2Base,lb2House, lb2Hotel, lb3Base,lb3House, lb3Hotel, p1Base, p1House, p1Hotel, p2Base, p2House, p2Hotel, p3Base, p3House, p3Hotel, o1Base, o1House, o1Hotel, o2Base, o2House, o2Hotel, o3Base, o3House, o3Hotel, r1Base, r1House, r1Hotel, r2Base, r2House, r2Hotel, r3Base, r3House, r3Hotel, y1Base, y1House, y1Hotel, y2Base, y2House, y2Hotel, y3Base, y3House, y3Hotel, g1Base, g1House, g1House, g2Base, g2House, g2Hotel, g3Base, g3House, g3Hotel, bl1Base, bl1House, bl1Hotel, bl2Base, bl2House, bl2Hotel, train1, train2, train3, train4);
 
         buttonMap.put("Button[id=b1Base, styleClass=button]''", b1Base);
         buttonMap.put("Button[id=b1House, styleClass=button]''", b1House);
@@ -184,6 +205,11 @@ public class MainController implements Initializable
         buttonMap.put("Button[id=bl2Base, styleClass=button]''", bl2Base);
         buttonMap.put("Button[id=bl2House, styleClass=button]''", bl2House);
         buttonMap.put("Button[id=bl2Hotel, styleClass=button]''", bl2Hotel);
+
+        buttonMap.put("Button[id=train1, styleClass=button]''", train1);
+        buttonMap.put("Button[id=train2, styleClass=button]''", train2);
+        buttonMap.put("Button[id=train3, styleClass=button]''", train3);
+        buttonMap.put("Button[id=train4, styleClass=button]''", train4);
     }
 
     private void setButtons(Button... buttons)
@@ -193,22 +219,69 @@ public class MainController implements Initializable
 
     private void setQuestionMap()
     {
-        setMap(questionMap, "questions");
+        questionMap.putAll(setBase("questions"));
+        questionMap.putAll(setHouse("questions"));
+        questionMap.putAll(setHotel("questions"));
+    }
+
+    private void setTrainAMap()
+    {
+        trainAMap.put(train1, getResourceImage("monopoly/answers/trains/1.png"));
+        trainAMap.put(train2, getResourceImage("monopoly/answers/trains/2.png"));
+        trainAMap.put(train3, getResourceImage("monopoly/answers/trains/3.png"));
+        trainAMap.put(train4, getResourceImage("monopoly/answers/trains/4.png"));
+
     }
 
     private void setAnswerMap()
     {
-        setMap(answerMap, "answers");
+        answerMap.putAll(setBase("answers"));
+        answerMap.putAll(setHouse("answers"));
+        answerMap.putAll(setHotel("answers"));
     }
 
-    private void setMap(HashMap<Button, Image> map, String directory)
+    private HashMap<Button, Image> setBase(String directory)
+    {
+        return getButtonImageHashMap( directory + "/base", b1Base, b2Base, lb1Base, lb2Base, lb3Base, p1Base, p2Base, p3Base, o1Base, o2Base, o3Base, r1Base, r2Base, r3Base, y1Base, y2Base, y3Base, g1Base, g2Base, g3Base, bl1Base, bl2Base);
+    }
+
+    private HashMap<Button, Image> setHouse(String directory)
+    {
+        return getButtonImageHashMap(directory + "/house", b1House, b2House, lb1House, lb2House, lb3House, p1House, p2House, p3House, o1House, o2House, o3House, r1House, r2House, r3House, y1House, y2House, y3House, g1House, g2House, g3House, bl1House, bl2House);
+    }
+
+    private HashMap<Button, Image> setHotel(String directory)
+    {
+        return getButtonImageHashMap( directory + "/hotel", b1Hotel, b2Hotel, lb1Hotel, lb2Hotel, lb3Hotel, p1Hotel, p2Hotel, p3Hotel, o1Hotel, o2Hotel, o3Hotel, r1Hotel, r2Hotel, r3Hotel, y1Hotel, y2Hotel, y3Hotel, g1Hotel, g2Hotel, g3Hotel, bl1Hotel, bl2Hotel);
+    }
+
+    private HashMap<Button, Image> getButtonImageHashMap(String directory, Button b1, Button b2, Button lb1, Button lb2, Button lb3, Button p1, Button p2, Button p3, Button o1, Button o2, Button o3, Button r1, Button r2, Button r3, Button y1, Button y2, Button y3, Button g1, Button g2, Button g3, Button bl1, Button bl2) {
+        HashMap<Button, Image> baseButtonMap = new HashMap<>();
+        ArrayList<Button> baseButtons = new ArrayList<>();
+        addAllButtons(baseButtons, b1, b2,
+                lb1, lb2, lb3,
+                p1, p2, p3,
+                o1, o2, o3,
+                r1, r2, r3,
+                y1, y2, y3,
+                g1, g2, g3,
+                bl1, bl2);
+        setMap(baseButtonMap, baseButtons, directory);
+        return baseButtonMap;
+    }
+
+    private void setMap(HashMap<Button, Image> map,ArrayList<Button> buttons, String directory)
     {
         for(int i = 0; i < buttons.size(); i++)
         {
-           //Todo: Set map with images
             map.put(buttons.get(i), getResourceImage("monopoly/" + directory + "/0.png"));
-//            map.put(buttons.get(i), new Image(String.valueOf(getClass().getClassLoader().getResource("monopoly/" + directory + "/" + i +".png"))));
+//            map.put(buttons.get(i), getResourceImage("monopoly/" + directory + "/"+i+".png"));
         }
+    }
+
+    private void addAllButtons(ArrayList<Button> buttonList,Button... buttons)
+    {
+        buttonList.addAll(Arrays.asList(buttons));
     }
 
     private void setGraphMap()
@@ -218,8 +291,17 @@ public class MainController implements Initializable
            graphMap.put(button, false);
        }
 
-       graphMap.put(buttons.get(1), true);
+       graphMap.replace(buttons.get(1), true);
        graphImageMap.put(buttons.get(1), getResourceImage("monopoly/graphs/0.png"));
+
+        graphMap.replace(train1, true);
+        graphImageMap.put(train1, getResourceImage("monopoly/graphs/trains/1.png"));
+        graphMap.replace(train2, true);
+        graphImageMap.put(train2, getResourceImage("monopoly/graphs/trains/2.png"));
+        graphMap.replace(train3, true);
+        graphImageMap.put(train3, getResourceImage("monopoly/graphs/trains/3.png"));
+       graphMap.replace(train4, true);
+        graphImageMap.put(train4, getResourceImage("monopoly/graphs/trains/4.png"));
     }
 
     private Image getResourceImage(String image)

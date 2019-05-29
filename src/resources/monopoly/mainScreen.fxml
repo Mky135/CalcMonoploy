@@ -136,6 +136,35 @@
       <Button fx:id="bl2House" graphicTextGap="0.0" layoutX="101.0" layoutY="622.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: GREEN;" />
       <Button fx:id="bl2Hotel" layoutX="128.0" layoutY="622.0" mnemonicParsing="false" onMouseClicked="#setQuestion" prefHeight="1.0" prefWidth="4.0" scaleY="0.7" style="-fx-background-color: RED;" />
 
+
+      <fx:define>
+         <Image fx:id="train" url="@train.png" />
+      </fx:define>
+
+      <Button fx:id="train1" prefHeight="50" prefWidth="50" layoutX="16.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#setTrainQuestion">
+         <graphic>
+            <ImageView image="$train" fitHeight="100" fitWidth="40" rotate="90" preserveRatio="true"/>
+         </graphic>
+      </Button>
+
+      <Button fx:id="train2" prefHeight="50" prefWidth="50" layoutX="330.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#setTrainQuestion">
+         <graphic>
+            <ImageView image="$train" fitHeight="100" fitWidth="40" rotate="180" preserveRatio="true"/>
+         </graphic>
+      </Button>
+
+      <Button fx:id="train3" prefHeight="50" prefWidth="50" layoutX="646.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#setTrainQuestion">
+         <graphic>
+            <ImageView image="$train" fitHeight="100" fitWidth="40" rotate="-90" preserveRatio="true"/>
+         </graphic>
+      </Button>
+
+      <Button fx:id="train4" prefHeight="50" prefWidth="50" layoutX="330.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#setTrainQuestion">
+         <graphic>
+            <ImageView image="$train" fitHeight="100" fitWidth="40" rotate="0" preserveRatio="true"/>
+         </graphic>
+      </Button>
+
    </children>
 
    <stylesheets>
