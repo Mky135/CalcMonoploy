@@ -75,6 +75,7 @@ public class MainController implements Initializable
         Button button = buttonMap.get(this.button);
         question.setImage(questionMap.get(button));
         answer.setImage(answerMap.get(button));
+
         if(graphMap.get(button))
         {
             Main.showGraphStage(true);
@@ -162,10 +163,13 @@ public class MainController implements Initializable
         buttonMap.put("Button[id=p3House, styleClass=button]''", p3House);
         buttonMap.put("Button[id=p3Hotel, styleClass=button]''", p3Hotel);
 
+        buttonMap.put("Button[id=o1Base, styleClass=button]''", o1Base);
         buttonMap.put("Button[id=o1House, styleClass=button]''", o1House);
         buttonMap.put("Button[id=o1Hotel, styleClass=button]''", o1Hotel);
+        buttonMap.put("Button[id=o2Base, styleClass=button]''", o2Base);
         buttonMap.put("Button[id=o2House, styleClass=button]''", o2House);
         buttonMap.put("Button[id=o2Hotel, styleClass=button]''", o2Hotel);
+        buttonMap.put("Button[id=o3Base, styleClass=button]''", o3Base);
         buttonMap.put("Button[id=o3House, styleClass=button]''", o3House);
         buttonMap.put("Button[id=o3Hotel, styleClass=button]''", o3Hotel);
 
@@ -291,8 +295,32 @@ public class MainController implements Initializable
            graphMap.put(button, false);
        }
 
-       graphMap.replace(buttons.get(1), true);
-       graphImageMap.put(buttons.get(1), getResourceImage("monopoly/graphs/0.png"));
+       graphMap.replace(b2Base, true);
+        graphImageMap.put(b2Base, getResourceImage("monopoly/graphs/0.png"));
+
+       graphMap.replace(p1Base, true);
+       graphMap.replace(p1Hotel, true);
+       graphMap.replace(p1House, true);
+       graphImageMap.put(p1Base, getResourceImage("monopoly/graphs/11.png"));
+       graphImageMap.put(p1House, getResourceImage("monopoly/graphs/11.png"));
+       graphImageMap.put(p1Hotel, getResourceImage("monopoly/graphs/11.png"));
+
+        graphMap.replace(p2Base, true);
+        graphMap.replace(p2Hotel, true);
+        graphMap.replace(p2House, true);
+        graphImageMap.put(p2Base, getResourceImage("monopoly/graphs/13.png"));
+        graphImageMap.put(p2House, getResourceImage("monopoly/graphs/13.png"));
+        graphImageMap.put(p2Hotel, getResourceImage("monopoly/graphs/13.png"));
+
+        graphMap.replace(p3Base, true);
+        graphMap.replace(p3Hotel, true);
+        graphMap.replace(p3House, true);
+        graphImageMap.put(p3Base, getResourceImage("monopoly/graphs/14.png"));
+        graphImageMap.put(p3House, getResourceImage("monopoly/graphs/14.png"));
+        graphImageMap.put(p3Hotel, getResourceImage("monopoly/graphs/14.png"));
+
+        graphMap.replace(o3Base, true);
+        graphImageMap.put(o3Base, getResourceImage("monopoly/graphs/19.png"));
 
         graphMap.replace(train1, true);
         graphImageMap.put(train1, getResourceImage("monopoly/graphs/trains/1.png"));
