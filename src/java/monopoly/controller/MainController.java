@@ -74,6 +74,7 @@ public class MainController implements Initializable
     {
         problemPane.setVisible(true);
         property = getProperty(event.getSource().toString());
+        assert property != null;
         question.setImage(property.getQuestion());
         answer.setImage(property.getAnswer());
 

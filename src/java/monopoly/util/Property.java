@@ -24,7 +24,7 @@ public class Property
         this.requiresGraphic = requiresGraphic;
         this.calculatorAllowed = calculatorAllowed;
 
-        if(calculatorAllowed)
+        if(requiresGraphic)
         {
             this.graphic = graphic;
         }
