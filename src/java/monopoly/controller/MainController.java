@@ -9,6 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 import monopoly.Main;
+import monopoly.util.Property;
 
 import java.net.URL;
 import java.util.*;
@@ -40,21 +41,22 @@ public class MainController implements Initializable
 
     @FXML private Button b1Base;@FXML private Button b1House; @FXML private Button b1Hotel; @FXML private Button b2Base;@FXML private Button b2House; @FXML private Button b2Hotel;
 
-    private HashMap<String, Button> buttonMap = new HashMap<>();
+    private ArrayList<Property> properties = new ArrayList<>();
 
-    private HashMap<Button, Image> questionMap = new HashMap<>();
+    private ArrayList<Image> baseQImages = new ArrayList<>();
+    private ArrayList<Image> houseQImages = new ArrayList<>();
+    private ArrayList<Image> hotelQImages = new ArrayList<>();
 
-    private HashMap<Button, Image> answerMap = new HashMap<>();
+    private ArrayList<Image> baseAImages = new ArrayList<>();
+    private ArrayList<Image> houseAImages = new ArrayList<>();
+    private ArrayList<Image> hotelAImages = new ArrayList<>();
 
-    private HashMap<Button, Boolean> graphMap = new HashMap<>();
+    private ArrayList<Image> trainQImages = new ArrayList<>();
+    private ArrayList<Image> trainAImages = new ArrayList<>();
 
-    private HashMap<Button, Image> graphImageMap = new HashMap<>();
+    private Image blank = getResourceImage("monopoly/answers/trains/blank.png");
 
-    private HashMap<Button, Image> trainAMap = new HashMap<>();
-
-    private ArrayList<Button> buttons = new ArrayList<>();
-
-    private String button;
+    private Property property;
 
     @FXML
     private void close()
@@ -71,32 +73,14 @@ public class MainController implements Initializable
     private void setQuestion(MouseEvent event)
     {
         problemPane.setVisible(true);
-        button = event.getSource().toString();
-        Button button = buttonMap.get(this.button);
-        question.setImage(questionMap.get(button));
-        answer.setImage(answerMap.get(button));
+        property = getProperty(event.getSource().toString());
+        question.setImage(property.getQuestion());
+        answer.setImage(property.getAnswer());
 
-        if(graphMap.get(button))
+        if(property.hasGraphic())
         {
             Main.showGraphStage(true);
-            GraphController.changeGraphic(graphImageMap.get(button));
-        }
-    }
-
-    @FXML
-    private void setTrainQuestion(MouseEvent event)
-    {
-//        System.out.println(event.getSource().toString());
-        problemPane.setVisible(true);
-        button = event.getSource().toString();
-        Button button = buttonMap.get(this.button);
-        question.setImage(getResourceImage("monopoly/answers/trains/blank.png"));
-        answer.setImage(trainAMap.get(button));
-
-        if(graphMap.get(button))
-        {
-            Main.showGraphStage(true);
-            GraphController.changeGraphic(graphImageMap.get(button));
+            GraphController.changeGraphic(property.getGraphic());
         }
     }
 
@@ -112,7 +96,7 @@ public class MainController implements Initializable
     @FXML
     private void correct()
     {
-        buttonMap.get(button).setVisible(false);
+        property.getButton().setVisible(false);
         close();
     }
 
@@ -125,211 +109,205 @@ public class MainController implements Initializable
 
         close();
 
-        setButtonMap();
-        setQuestionMap();
-        setAnswerMap();
-        setGraphMap();
-        setTrainAMap();
+        setProperties();
     }
 
-    private void setButtonMap()
+    private void setProperties()
     {
-        setButtons(b1Base, b1House, b1Hotel, b2Base, b2House, b2Hotel, lb1Base, lb1House, lb1Hotel, lb2Base,lb2House, lb2Hotel, lb3Base,lb3House, lb3Hotel, p1Base, p1House, p1Hotel, p2Base, p2House, p2Hotel, p3Base, p3House, p3Hotel, o1Base, o1House, o1Hotel, o2Base, o2House, o2Hotel, o3Base, o3House, o3Hotel, r1Base, r1House, r1Hotel, r2Base, r2House, r2Hotel, r3Base, r3House, r3Hotel, y1Base, y1House, y1Hotel, y2Base, y2House, y2Hotel, y3Base, y3House, y3Hotel, g1Base, g1House, g1House, g2Base, g2House, g2Hotel, g3Base, g3House, g3Hotel, bl1Base, bl1House, bl1Hotel, bl2Base, bl2House, bl2Hotel, train1, train2, train3, train4);
+        setBaseQImages();
+        setBaseAImages();
+        setHouseQImages();
+        setHotelQImages();
+        setHouseAImages();
+        setHotelAImages();
+        setTrainQImages();
+        setTrainAImages();
 
-        buttonMap.put("Button[id=b1Base, styleClass=button]''", b1Base);
-        buttonMap.put("Button[id=b1House, styleClass=button]''", b1House);
-        buttonMap.put("Button[id=b1Hotel, styleClass=button]''", b1Hotel);
-        buttonMap.put("Button[id=b2Base, styleClass=button]''", b2Base);
-        buttonMap.put("Button[id=b2House, styleClass=button]''", b2House);
-        buttonMap.put("Button[id=b2Hotel, styleClass=button]''", b2Hotel);
 
-        buttonMap.put("Button[id=lb1Base, styleClass=button]''", lb1Base);
-        buttonMap.put("Button[id=lb1House, styleClass=button]''", lb1House);
-        buttonMap.put("Button[id=lb1Hotel, styleClass=button]''", lb1Hotel);
-        buttonMap.put("Button[id=lb2Base, styleClass=button]''", lb2Base);
-        buttonMap.put("Button[id=lb2House, styleClass=button]''", lb2House);
-        buttonMap.put("Button[id=lb2Hotel, styleClass=button]''", lb2Hotel);
-        buttonMap.put("Button[id=lb3Base, styleClass=button]''", lb3Base);
-        buttonMap.put("Button[id=lb3House, styleClass=button]''", lb3House);
-        buttonMap.put("Button[id=lb3Hotel, styleClass=button]''", lb3Hotel);
+//        buttonMap.put("Button[id=lb1Base, styleClass=button]''", lb1Base);
+//        buttonMap.put("Button[id=lb1House, styleClass=button]''", lb1House);
+//        buttonMap.put("Button[id=lb1Hotel, styleClass=button]''", lb1Hotel);
+//        buttonMap.put("Button[id=lb2Base, styleClass=button]''", lb2Base);
+//        buttonMap.put("Button[id=lb2House, styleClass=button]''", lb2House);
+//        buttonMap.put("Button[id=lb2Hotel, styleClass=button]''", lb2Hotel);
+//        buttonMap.put("Button[id=lb3Base, styleClass=button]''", lb3Base);
+//        buttonMap.put("Button[id=lb3House, styleClass=button]''", lb3House);
+//        buttonMap.put("Button[id=lb3Hotel, styleClass=button]''", lb3Hotel);
+//
+//        buttonMap.put("Button[id=p1Base, styleClass=button]''", p1Base);
+//        buttonMap.put("Button[id=p1House, styleClass=button]''", p1House);
+//        buttonMap.put("Button[id=p1Hotel, styleClass=button]''", p1Hotel);
+//        buttonMap.put("Button[id=p2Base, styleClass=button]''", p2Base);
+//        buttonMap.put("Button[id=p2House, styleClass=button]''", p2House);
+//        buttonMap.put("Button[id=p2Hotel, styleClass=button]''", p2Hotel);
+//        buttonMap.put("Button[id=p3Base, styleClass=button]''", p3Base);
+//        buttonMap.put("Button[id=p3House, styleClass=button]''", p3House);
+//        buttonMap.put("Button[id=p3Hotel, styleClass=button]''", p3Hotel);
+//
+//        buttonMap.put("Button[id=o1Base, styleClass=button]''", o1Base);
+//        buttonMap.put("Button[id=o1House, styleClass=button]''", o1House);
+//        buttonMap.put("Button[id=o1Hotel, styleClass=button]''", o1Hotel);
+//        buttonMap.put("Button[id=o2Base, styleClass=button]''", o2Base);
+//        buttonMap.put("Button[id=o2House, styleClass=button]''", o2House);
+//        buttonMap.put("Button[id=o2Hotel, styleClass=button]''", o2Hotel);
+//        buttonMap.put("Button[id=o3Base, styleClass=button]''", o3Base);
+//        buttonMap.put("Button[id=o3House, styleClass=button]''", o3House);
+//        buttonMap.put("Button[id=o3Hotel, styleClass=button]''", o3Hotel);
+//
+//        buttonMap.put("Button[id=r1Base, styleClass=button]''", r1Base);
+//        buttonMap.put("Button[id=r1House, styleClass=button]''", r1House);
+//        buttonMap.put("Button[id=r1Hotel, styleClass=button]''", r1Hotel);
+//        buttonMap.put("Button[id=r2Base, styleClass=button]''", r2Base);
+//        buttonMap.put("Button[id=r2House, styleClass=button]''", r2House);
+//        buttonMap.put("Button[id=r2Hotel, styleClass=button]''", r2Hotel);
+//        buttonMap.put("Button[id=r3Base, styleClass=button]''", r3Base);
+//        buttonMap.put("Button[id=r3House, styleClass=button]''", r3House);
+//        buttonMap.put("Button[id=r3Hotel, styleClass=button]''", r3Hotel);
+//
+//        buttonMap.put("Button[id=y1Base, styleClass=button]''", y1Base);
+//        buttonMap.put("Button[id=y1House, styleClass=button]''", y1House);
+//        buttonMap.put("Button[id=y1Hotel, styleClass=button]''", y1Hotel);
+//        buttonMap.put("Button[id=y2Base, styleClass=button]''", y2Base);
+//        buttonMap.put("Button[id=y2House, styleClass=button]''", y2House);
+//        buttonMap.put("Button[id=y2Hotel, styleClass=button]''", y2Hotel);
+//        buttonMap.put("Button[id=y3Base, styleClass=button]''", y3Base);
+//        buttonMap.put("Button[id=y3House, styleClass=button]''", y3House);
+//        buttonMap.put("Button[id=y3Hotel, styleClass=button]''", y3Hotel);
+//
+//        buttonMap.put("Button[id=g1Base, styleClass=button]''", g1Base);
+//        buttonMap.put("Button[id=g1House, styleClass=button]''", g1House);
+//        buttonMap.put("Button[id=g1Hotel, styleClass=button]''", g1Hotel);
+//        buttonMap.put("Button[id=g2Base, styleClass=button]''", g2Base);
+//        buttonMap.put("Button[id=g2House, styleClass=button]''", g2House);
+//        buttonMap.put("Button[id=g2Hotel, styleClass=button]''", g2Hotel);
+//        buttonMap.put("Button[id=g3Base, styleClass=button]''", g3Base);
+//        buttonMap.put("Button[id=g3House, styleClass=button]''", g3House);
+//        buttonMap.put("Button[id=g3Hotel, styleClass=button]''", g3Hotel);
+//
+//        buttonMap.put("Button[id=bl1Base, styleClass=button]''", bl1Base);
+//        buttonMap.put("Button[id=bl1House, styleClass=button]''", bl1House);
+//        buttonMap.put("Button[id=bl1Hotel, styleClass=button]''", bl1Hotel);
+//        buttonMap.put("Button[id=bl2Base, styleClass=button]''", bl2Base);
+//        buttonMap.put("Button[id=bl2House, styleClass=button]''", bl2House);
+//        buttonMap.put("Button[id=bl2Hotel, styleClass=button]''", bl2Hotel);
+//
+//        buttonMap.put("Button[id=train1, styleClass=button]''", train1);
+//        buttonMap.put("Button[id=train2, styleClass=button]''", train2);
+//        buttonMap.put("Button[id=train3, styleClass=button]''", train3);
+//        buttonMap.put("Button[id=train4, styleClass=button]''", train4);
 
-        buttonMap.put("Button[id=p1Base, styleClass=button]''", p1Base);
-        buttonMap.put("Button[id=p1House, styleClass=button]''", p1House);
-        buttonMap.put("Button[id=p1Hotel, styleClass=button]''", p1Hotel);
-        buttonMap.put("Button[id=p2Base, styleClass=button]''", p2Base);
-        buttonMap.put("Button[id=p2House, styleClass=button]''", p2House);
-        buttonMap.put("Button[id=p2Hotel, styleClass=button]''", p2Hotel);
-        buttonMap.put("Button[id=p3Base, styleClass=button]''", p3Base);
-        buttonMap.put("Button[id=p3House, styleClass=button]''", p3House);
-        buttonMap.put("Button[id=p3Hotel, styleClass=button]''", p3Hotel);
+        properties.add(new Property("Button[id=b1Base, styleClass=button]''", b1Base, baseQImages.get(0), baseAImages.get(0)));
+        properties.add(new Property("Button[id=b1House, styleClass=button]''", b1House,houseQImages.get(0), houseAImages.get(0)));
+        properties.add(new Property("Button[id=b1Hotel, styleClass=button]''", b1Hotel, hotelQImages.get(0), hotelAImages.get(0)));
+        properties.add(new Property("Button[id=b2Base, styleClass=button]''", b2Base, baseQImages.get(1), baseAImages.get(1)));
+        properties.add(new Property("Button[id=b2House, styleClass=button]''", b2House,houseQImages.get(1), houseAImages.get(1)));
+        properties.add(new Property("Button[id=b2Hotel, styleClass=button]''", b2Hotel, hotelQImages.get(1), hotelAImages.get(1)));
 
-        buttonMap.put("Button[id=o1Base, styleClass=button]''", o1Base);
-        buttonMap.put("Button[id=o1House, styleClass=button]''", o1House);
-        buttonMap.put("Button[id=o1Hotel, styleClass=button]''", o1Hotel);
-        buttonMap.put("Button[id=o2Base, styleClass=button]''", o2Base);
-        buttonMap.put("Button[id=o2House, styleClass=button]''", o2House);
-        buttonMap.put("Button[id=o2Hotel, styleClass=button]''", o2Hotel);
-        buttonMap.put("Button[id=o3Base, styleClass=button]''", o3Base);
-        buttonMap.put("Button[id=o3House, styleClass=button]''", o3House);
-        buttonMap.put("Button[id=o3Hotel, styleClass=button]''", o3Hotel);
+//        properties.add(new Property("Button[id=p1Base, styleClass=button]''", p1Base, baseQImages.get(5), baseQImages.get(5), getResourceImage("monopoly/graphs/11.png"), true, false));
+//        properties.add(new Property("Button[id=p1House, styleClass=button]''", p1House, houseQImages.get(5), houseQImages.get(5), getResourceImage("monopoly/graphs/11.png"), true, false));
+//        properties.add(new Property("Button[id=p1Hotel, styleClass=button]''", p1Hotel, hotelQImages.get(5), hotelAImages.get(5), getResourceImage("monopoly/graphs/11.png"), true, false));
+//        properties.add(new Property("Button[id=p2Base, styleClass=button]''", p2Base, baseQImages.get(6), baseQImages.get(6), getResourceImage("monopoly/graphs/13.png"), true, false));
+//        properties.add(new Property("Button[id=p2House, styleClass=button]''", p2House, houseQImages.get(6), houseQImages.get(6), getResourceImage("monopoly/graphs/13.png"), true, false));
+//        properties.add(new Property("Button[id=p2Hotel, styleClass=button]''", p2Hotel, hotelQImages.get(6), hotelAImages.get(6), getResourceImage("monopoly/graphs/13.png"), true, false));
+//        properties.add(new Property("Button[id=p3Base, styleClass=button]''", p3Base, baseQImages.get(7), baseQImages.get(7), getResourceImage("monopoly/graphs/14.png"), true, false));
+//        properties.add(new Property("Button[id=p3House, styleClass=button]''", p3House, houseQImages.get(7), houseQImages.get(7), getResourceImage("monopoly/graphs/14.png"), true, false));
+//        properties.add(new Property("Button[id=p3Hotel, styleClass=button]''", p3Hotel, hotelQImages.get(7), hotelAImages.get(7), getResourceImage("monopoly/graphs/14.png"), true, false));
+//
+//        properties.add(new Property("Button[id=o3Base, styleClass=button]''", o3Base, baseQImages.get(10), baseAImages.get(10), getResourceImage("monopoly/graphs/19.png"), true, false));
 
-        buttonMap.put("Button[id=r1Base, styleClass=button]''", r1Base);
-        buttonMap.put("Button[id=r1House, styleClass=button]''", r1House);
-        buttonMap.put("Button[id=r1Hotel, styleClass=button]''", r1Hotel);
-        buttonMap.put("Button[id=r2Base, styleClass=button]''", r2Base);
-        buttonMap.put("Button[id=r2House, styleClass=button]''", r2House);
-        buttonMap.put("Button[id=r2Hotel, styleClass=button]''", r2Hotel);
-        buttonMap.put("Button[id=r3Base, styleClass=button]''", r3Base);
-        buttonMap.put("Button[id=r3House, styleClass=button]''", r3House);
-        buttonMap.put("Button[id=r3Hotel, styleClass=button]''", r3Hotel);
 
-        buttonMap.put("Button[id=y1Base, styleClass=button]''", y1Base);
-        buttonMap.put("Button[id=y1House, styleClass=button]''", y1House);
-        buttonMap.put("Button[id=y1Hotel, styleClass=button]''", y1Hotel);
-        buttonMap.put("Button[id=y2Base, styleClass=button]''", y2Base);
-        buttonMap.put("Button[id=y2House, styleClass=button]''", y2House);
-        buttonMap.put("Button[id=y2Hotel, styleClass=button]''", y2Hotel);
-        buttonMap.put("Button[id=y3Base, styleClass=button]''", y3Base);
-        buttonMap.put("Button[id=y3House, styleClass=button]''", y3House);
-        buttonMap.put("Button[id=y3Hotel, styleClass=button]''", y3Hotel);
+        properties.add(new Property("Button[id=train1, styleClass=button]''", train1, blank, trainAImages.get(0), trainQImages.get(0), true, false));
+        properties.add(new Property("Button[id=train2, styleClass=button]''", train2, blank, trainAImages.get(1), trainQImages.get(1), true, false));
+        properties.add(new Property("Button[id=train3, styleClass=button]''", train3, blank, trainAImages.get(2), trainQImages.get(2), true, false));
+        properties.add(new Property("Button[id=train4, styleClass=button]''", train4, blank, trainAImages.get(3), trainQImages.get(3), true, false));
 
-        buttonMap.put("Button[id=g1Base, styleClass=button]''", g1Base);
-        buttonMap.put("Button[id=g1House, styleClass=button]''", g1House);
-        buttonMap.put("Button[id=g1Hotel, styleClass=button]''", g1Hotel);
-        buttonMap.put("Button[id=g2Base, styleClass=button]''", g2Base);
-        buttonMap.put("Button[id=g2House, styleClass=button]''", g2House);
-        buttonMap.put("Button[id=g2Hotel, styleClass=button]''", g2Hotel);
-        buttonMap.put("Button[id=g3Base, styleClass=button]''", g3Base);
-        buttonMap.put("Button[id=g3House, styleClass=button]''", g3House);
-        buttonMap.put("Button[id=g3Hotel, styleClass=button]''", g3Hotel);
-
-        buttonMap.put("Button[id=bl1Base, styleClass=button]''", bl1Base);
-        buttonMap.put("Button[id=bl1House, styleClass=button]''", bl1House);
-        buttonMap.put("Button[id=bl1Hotel, styleClass=button]''", bl1Hotel);
-        buttonMap.put("Button[id=bl2Base, styleClass=button]''", bl2Base);
-        buttonMap.put("Button[id=bl2House, styleClass=button]''", bl2House);
-        buttonMap.put("Button[id=bl2Hotel, styleClass=button]''", bl2Hotel);
-
-        buttonMap.put("Button[id=train1, styleClass=button]''", train1);
-        buttonMap.put("Button[id=train2, styleClass=button]''", train2);
-        buttonMap.put("Button[id=train3, styleClass=button]''", train3);
-        buttonMap.put("Button[id=train4, styleClass=button]''", train4);
     }
 
-    private void setButtons(Button... buttons)
+    private void setTrainQImages()
     {
-        this.buttons.addAll(Arrays.asList(buttons));
-    }
-
-    private void setQuestionMap()
-    {
-        questionMap.putAll(setBase("questions"));
-        questionMap.putAll(setHouse("questions"));
-        questionMap.putAll(setHotel("questions"));
-    }
-
-    private void setTrainAMap()
-    {
-        trainAMap.put(train1, getResourceImage("monopoly/answers/trains/1.png"));
-        trainAMap.put(train2, getResourceImage("monopoly/answers/trains/2.png"));
-        trainAMap.put(train3, getResourceImage("monopoly/answers/trains/3.png"));
-        trainAMap.put(train4, getResourceImage("monopoly/answers/trains/4.png"));
-
-    }
-
-    private void setAnswerMap()
-    {
-        answerMap.putAll(setBase("answers"));
-        answerMap.putAll(setHouse("answers"));
-        answerMap.putAll(setHotel("answers"));
-    }
-
-    private HashMap<Button, Image> setBase(String directory)
-    {
-        return getButtonImageHashMap( directory + "/base", b1Base, b2Base, lb1Base, lb2Base, lb3Base, p1Base, p2Base, p3Base, o1Base, o2Base, o3Base, r1Base, r2Base, r3Base, y1Base, y2Base, y3Base, g1Base, g2Base, g3Base, bl1Base, bl2Base);
-    }
-
-    private HashMap<Button, Image> setHouse(String directory)
-    {
-        return getButtonImageHashMap(directory + "/house", b1House, b2House, lb1House, lb2House, lb3House, p1House, p2House, p3House, o1House, o2House, o3House, r1House, r2House, r3House, y1House, y2House, y3House, g1House, g2House, g3House, bl1House, bl2House);
-    }
-
-    private HashMap<Button, Image> setHotel(String directory)
-    {
-        return getButtonImageHashMap( directory + "/hotel", b1Hotel, b2Hotel, lb1Hotel, lb2Hotel, lb3Hotel, p1Hotel, p2Hotel, p3Hotel, o1Hotel, o2Hotel, o3Hotel, r1Hotel, r2Hotel, r3Hotel, y1Hotel, y2Hotel, y3Hotel, g1Hotel, g2Hotel, g3Hotel, bl1Hotel, bl2Hotel);
-    }
-
-    private HashMap<Button, Image> getButtonImageHashMap(String directory, Button b1, Button b2, Button lb1, Button lb2, Button lb3, Button p1, Button p2, Button p3, Button o1, Button o2, Button o3, Button r1, Button r2, Button r3, Button y1, Button y2, Button y3, Button g1, Button g2, Button g3, Button bl1, Button bl2) {
-        HashMap<Button, Image> baseButtonMap = new HashMap<>();
-        ArrayList<Button> baseButtons = new ArrayList<>();
-        addAllButtons(baseButtons, b1, b2,
-                lb1, lb2, lb3,
-                p1, p2, p3,
-                o1, o2, o3,
-                r1, r2, r3,
-                y1, y2, y3,
-                g1, g2, g3,
-                bl1, bl2);
-        setMap(baseButtonMap, baseButtons, directory);
-        return baseButtonMap;
-    }
-
-    private void setMap(HashMap<Button, Image> map,ArrayList<Button> buttons, String directory)
-    {
-        for(int i = 0; i < buttons.size(); i++)
+        for(int i = 1; i <= 4; i++)
         {
-            map.put(buttons.get(i), getResourceImage("monopoly/" + directory + "/0.png"));
-//            map.put(buttons.get(i), getResourceImage("monopoly/" + directory + "/"+i+".png"));
+            trainQImages.add(getResourceImage("monopoly/graphs/trains/"+ i + ".png"));
         }
     }
 
-    private void addAllButtons(ArrayList<Button> buttonList,Button... buttons)
+    private void setTrainAImages()
     {
-        buttonList.addAll(Arrays.asList(buttons));
+        for(int i = 1; i <= 4; i++)
+        {
+            trainAImages.add(getResourceImage("monopoly/answers/trains/"+ i + ".png"));
+        }
     }
 
-    private void setGraphMap()
+    private void setBaseQImages()
     {
-       for(Button button : buttons)
-       {
-           graphMap.put(button, false);
-       }
+        this.baseQImages = getBase("questions");
+    }
 
-       graphMap.replace(b2Base, true);
-        graphImageMap.put(b2Base, getResourceImage("monopoly/graphs/0.png"));
+    private void setHouseQImages()
+    {
+        this.houseQImages = getHouse("questions");
+    }
 
-       graphMap.replace(p1Base, true);
-       graphMap.replace(p1Hotel, true);
-       graphMap.replace(p1House, true);
-       graphImageMap.put(p1Base, getResourceImage("monopoly/graphs/11.png"));
-       graphImageMap.put(p1House, getResourceImage("monopoly/graphs/11.png"));
-       graphImageMap.put(p1Hotel, getResourceImage("monopoly/graphs/11.png"));
+    private void setHotelQImages()
+    {
+        this.hotelQImages = getHotel("questions");
+    }
 
-        graphMap.replace(p2Base, true);
-        graphMap.replace(p2Hotel, true);
-        graphMap.replace(p2House, true);
-        graphImageMap.put(p2Base, getResourceImage("monopoly/graphs/13.png"));
-        graphImageMap.put(p2House, getResourceImage("monopoly/graphs/13.png"));
-        graphImageMap.put(p2Hotel, getResourceImage("monopoly/graphs/13.png"));
+    private void setBaseAImages()
+    {
+        this.baseAImages = getBase("answers");
+    }
 
-        graphMap.replace(p3Base, true);
-        graphMap.replace(p3Hotel, true);
-        graphMap.replace(p3House, true);
-        graphImageMap.put(p3Base, getResourceImage("monopoly/graphs/14.png"));
-        graphImageMap.put(p3House, getResourceImage("monopoly/graphs/14.png"));
-        graphImageMap.put(p3Hotel, getResourceImage("monopoly/graphs/14.png"));
+    private void setHouseAImages()
+    {
+        this.houseAImages = getHouse("answers");
+    }
 
-        graphMap.replace(o3Base, true);
-        graphImageMap.put(o3Base, getResourceImage("monopoly/graphs/19.png"));
+    private void setHotelAImages()
+    {
+        this.hotelAImages = getHotel("answers");
+    }
 
-        graphMap.replace(train1, true);
-        graphImageMap.put(train1, getResourceImage("monopoly/graphs/trains/1.png"));
-        graphMap.replace(train2, true);
-        graphImageMap.put(train2, getResourceImage("monopoly/graphs/trains/2.png"));
-        graphMap.replace(train3, true);
-        graphImageMap.put(train3, getResourceImage("monopoly/graphs/trains/3.png"));
-       graphMap.replace(train4, true);
-        graphImageMap.put(train4, getResourceImage("monopoly/graphs/trains/4.png"));
+    private ArrayList<Image> getBase(String directory)
+    {
+        return getImages( directory + "/base");
+    }
+
+    private ArrayList<Image> getHouse(String directory)
+    {
+        return getImages(directory + "/house");
+    }
+
+    private ArrayList<Image> getHotel(String directory)
+    {
+        return getImages( directory + "/hotel");
+    }
+
+    private ArrayList<Image> getImages(String directory)
+    {
+        ArrayList<Image> images = new ArrayList<>();
+
+        for(int i = 0; i < 2; i++)
+        {
+//            images.add(getResourceImage("monopoly/" + directory + "/"+i+".png"));
+            images.add(getResourceImage("monopoly/" + directory + "/0.png"));
+        }
+
+        return images;
+    }
+
+    private Property getProperty(String eventSource)
+    {
+        for(Property property1 : properties)
+        {
+            if(eventSource.equals(property1.getEventSource()))
+            {
+                return property1;
+            }
+        }
+
+        return null;
     }
 
     private Image getResourceImage(String image)

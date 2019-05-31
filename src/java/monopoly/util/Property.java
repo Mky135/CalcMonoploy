@@ -9,18 +9,18 @@ public class Property
     private Button button;
 
     private Image question;
-    private Image answers;
+    private Image answer;
     private Image graphic;
 
     private boolean requiresGraphic;
     private boolean calculatorAllowed;
 
-    public Property(String eventSource, Button button, Image question, Image answers, Image graphic, boolean requiresGraphic, boolean calculatorAllowed)
+    public Property(String eventSource, Button button, Image question, Image answer, Image graphic, boolean requiresGraphic, boolean calculatorAllowed)
     {
         this.eventSource = eventSource;
         this.button = button;
         this.question = question;
-        this.answers = answers;
+        this.answer = answer;
         this.requiresGraphic = requiresGraphic;
         this.calculatorAllowed = calculatorAllowed;
 
@@ -28,6 +28,16 @@ public class Property
         {
             this.graphic = graphic;
         }
+    }
+
+    public Property(String eventSource, Button button, Image question, Image answer)
+    {
+        this(eventSource, button, question, answer, null, false, false);
+    }
+
+    public String getEventSource()
+    {
+        return eventSource;
     }
 
     public boolean hasGraphic()
@@ -58,8 +68,8 @@ public class Property
         return question;
     }
 
-    public Image getAnswers()
+    public Image getAnswer()
     {
-        return answers;
+        return answer;
     }
 }
