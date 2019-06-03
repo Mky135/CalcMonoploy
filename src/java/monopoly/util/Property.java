@@ -30,6 +30,11 @@ public class Property
         }
     }
 
+    public Property(String eventSource, Button button, Image question, Image answer, boolean calculatorAllowed)
+    {
+        this(eventSource, button, question, answer, null, false, calculatorAllowed);
+    }
+
     public Property(String eventSource, Button button, Image question, Image answer)
     {
         this(eventSource, button, question, answer, null, false, false);
