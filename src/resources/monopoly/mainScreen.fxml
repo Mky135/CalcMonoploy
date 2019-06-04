@@ -73,12 +73,15 @@
          <children>
             <fx:define>
                <Image fx:id="btnImage" url="@CloseButton.png" />
+               <Image fx:id="asterisk" url="@asteriskSign.jpg" />
             </fx:define>
             <Button mnemonicParsing="false" onMouseClicked="#close" prefHeight="20" prefWidth="20">
                <graphic>
-                   <ImageView image="$btnImage" fitHeight="20" fitWidth="20"/>
+                  <ImageView image="$btnImage" fitWidth="20" fitHeight="20" preserveRatio="true"/>
                </graphic>
             </Button>
+
+            <ImageView fx:id="calcNeeded" image="$asterisk" fitWidth="20" fitHeight="20" preserveRatio="true" layoutX="500" />
 
             <Label alignment="CENTER" layoutX="105.0" layoutY="72.0" prefHeight="89.0" prefWidth="294.0" text="Question:">
                <font>
@@ -141,25 +144,25 @@
          <Image fx:id="train" url="@train.png" />
       </fx:define>
 
-      <Button fx:id="train1" prefHeight="50" prefWidth="50" layoutX="16.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#setTrainQuestion">
+      <Button fx:id="train1" prefHeight="50" prefWidth="50" layoutX="16.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#setQuestion">
          <graphic>
             <ImageView image="$train" fitHeight="100" fitWidth="40" rotate="90" preserveRatio="true"/>
          </graphic>
       </Button>
 
-      <Button fx:id="train2" prefHeight="50" prefWidth="50" layoutX="330.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#setTrainQuestion">
+      <Button fx:id="train2" prefHeight="50" prefWidth="50" layoutX="330.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#setQuestion">
          <graphic>
             <ImageView image="$train" fitHeight="100" fitWidth="40" rotate="180" preserveRatio="true"/>
          </graphic>
       </Button>
 
-      <Button fx:id="train3" prefHeight="50" prefWidth="50" layoutX="646.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#setTrainQuestion">
+      <Button fx:id="train3" prefHeight="50" prefWidth="50" layoutX="646.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#setQuestion">
          <graphic>
             <ImageView image="$train" fitHeight="100" fitWidth="40" rotate="-90" preserveRatio="true"/>
          </graphic>
       </Button>
 
-      <Button fx:id="train4" prefHeight="50" prefWidth="50" layoutX="330.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#setTrainQuestion">
+      <Button fx:id="train4" prefHeight="50" prefWidth="50" layoutX="330.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#setQuestion">
          <graphic>
             <ImageView image="$train" fitHeight="100" fitWidth="40" rotate="0" preserveRatio="true"/>
          </graphic>
