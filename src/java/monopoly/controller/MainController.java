@@ -152,15 +152,15 @@ public class MainController implements Initializable
         properties.add(new Property("Button[id=lb3House, styleClass=button]''", lb3House, houseQImages.get(4), houseAImages.get(4)));
         properties.add(new Property("Button[id=lb3Hotel, styleClass=button]''", lb3Hotel,hotelQImages.get(4), hotelAImages.get(4)));
 
-        properties.add(new Property("Button[id=p1Base, styleClass=button]''", p1Base, baseQImages.get(5), baseQImages.get(5), getResourceImage("monopoly/graphs/11.png"), true));
-        properties.add(new Property("Button[id=p1House, styleClass=button]''", p1House, houseQImages.get(5), houseQImages.get(5), getResourceImage("monopoly/graphs/11.png"), true));
-        properties.add(new Property("Button[id=p1Hotel, styleClass=button]''", p1Hotel, hotelQImages.get(5), hotelAImages.get(5), getResourceImage("monopoly/graphs/11.png"), true));
-        properties.add(new Property("Button[id=p2Base, styleClass=button]''", p2Base, baseQImages.get(6), baseQImages.get(6), getResourceImage("monopoly/graphs/13.png"), false));
-        properties.add(new Property("Button[id=p2House, styleClass=button]''", p2House, houseQImages.get(6), houseQImages.get(6), getResourceImage("monopoly/graphs/13.png"), false));
-        properties.add(new Property("Button[id=p2Hotel, styleClass=button]''", p2Hotel, hotelQImages.get(6), hotelAImages.get(6), getResourceImage("monopoly/graphs/13.png"), false));
-        properties.add(new Property("Button[id=p3Base, styleClass=button]''", p3Base, baseQImages.get(7), baseQImages.get(7), getResourceImage("monopoly/graphs/14.png"), false));
-        properties.add(new Property("Button[id=p3House, styleClass=button]''", p3House, houseQImages.get(7), houseQImages.get(7), getResourceImage("monopoly/graphs/14.png"), false));
-        properties.add(new Property("Button[id=p3Hotel, styleClass=button]''", p3Hotel, hotelQImages.get(7), hotelAImages.get(7), getResourceImage("monopoly/graphs/14.png"), false));
+        properties.add(new Property("Button[id=p1Base, styleClass=button]''", p1Base, baseQImages.get(5), baseQImages.get(5), getResourceImage("monopoly/graphs/6.png"), true));
+        properties.add(new Property("Button[id=p1House, styleClass=button]''", p1House, houseQImages.get(5), houseQImages.get(5), getResourceImage("monopoly/graphs/6.png"), true));
+        properties.add(new Property("Button[id=p1Hotel, styleClass=button]''", p1Hotel, hotelQImages.get(5), hotelAImages.get(5), getResourceImage("monopoly/graphs/6.png"), true));
+        properties.add(new Property("Button[id=p2Base, styleClass=button]''", p2Base, baseQImages.get(6), baseQImages.get(6), getResourceImage("monopoly/graphs/7.png"), false));
+        properties.add(new Property("Button[id=p2House, styleClass=button]''", p2House, houseQImages.get(6), houseQImages.get(6), getResourceImage("monopoly/graphs/7.png"), false));
+        properties.add(new Property("Button[id=p2Hotel, styleClass=button]''", p2Hotel, hotelQImages.get(6), hotelAImages.get(6), getResourceImage("monopoly/graphs/7.png"), false));
+        properties.add(new Property("Button[id=p3Base, styleClass=button]''", p3Base, baseQImages.get(7), baseQImages.get(7), getResourceImage("monopoly/graphs/8.png"), false));
+        properties.add(new Property("Button[id=p3House, styleClass=button]''", p3House, houseQImages.get(7), houseQImages.get(7), getResourceImage("monopoly/graphs/8.png"), false));
+        properties.add(new Property("Button[id=p3Hotel, styleClass=button]''", p3Hotel, hotelQImages.get(7), hotelAImages.get(7), getResourceImage("monopoly/graphs/8.png"), false));
 
         properties.add(new Property("Button[id=o1Base, styleClass=button]''", o1Base, baseQImages.get(8), baseAImages.get(8)));
         properties.add(new Property("Button[id=o1House, styleClass=button]''", o1House, houseQImages.get(8), houseAImages.get(8)));
@@ -168,36 +168,36 @@ public class MainController implements Initializable
         properties.add(new Property("Button[id=o2Base, styleClass=button]''", o2Base, baseQImages.get(9), baseAImages.get(9)));
         properties.add(new Property("Button[id=o2House, styleClass=button]''", o2House, houseQImages.get(9), houseAImages.get(9)));
         properties.add(new Property("Button[id=o2Hotel, styleClass=button]''", o2Hotel, hotelQImages.get(9), houseAImages.get(9)));
-        properties.add(new Property("Button[id=o3Base, styleClass=button]''", o3Base, baseQImages.get(10), baseAImages.get(10), getResourceImage("monopoly/graphs/19.png"), true));
-        properties.add(new Property("Button[id=o3House, styleClass=button]''", o3House, houseQImages.get(10), houseAImages.get(10)));
-        properties.add(new Property("Button[id=o3Hotel, styleClass=button]''", o3Hotel, hotelQImages.get(10), houseAImages.get(10)));
+        properties.add(new Property("Button[id=o3Base, styleClass=button]''", o3Base, baseQImages.get(10), baseAImages.get(10), getResourceImage("monopoly/graphs/11.png"), true));
+        properties.add(new Property("Button[id=o3House, styleClass=button]''", o3House, houseQImages.get(10), houseAImages.get(10), getResourceImage("monopoly/graphs/11.png"), true));
+        properties.add(new Property("Button[id=o3Hotel, styleClass=button]''", o3Hotel, hotelQImages.get(10), houseAImages.get(10), getResourceImage("monopoly/graphs/11.png"), true));
 
-        properties.add(new Property("Button[id=r1Base, styleClass=button]''", r1Base, baseQImages.get(11), baseAImages.get(11), true));
-        properties.add(new Property("Button[id=r1House, styleClass=button]''", r1House, houseQImages.get(11), houseAImages.get(11), true));
-        properties.add(new Property("Button[id=r1Hotel, styleClass=button]''", r1Hotel, hotelQImages.get(11), hotelAImages.get(11), true));
-        properties.add(new Property("Button[id=r2Base, styleClass=button]''", r2Base, baseQImages.get(12), baseAImages.get(12)));
-        properties.add(new Property("Button[id=r2House, styleClass=button]''", r2House, houseQImages.get(12), houseAImages.get(12)));
-        properties.add(new Property("Button[id=r2Hotel, styleClass=button]''", r2Hotel, hotelQImages.get(12), hotelAImages.get(12)));
-        properties.add(new Property("Button[id=r3Base, styleClass=button]''", r3Base, baseQImages.get(13), baseAImages.get(13)));
-        properties.add(new Property("Button[id=r3House, styleClass=button]''", r3House, houseQImages.get(13), houseAImages.get(13)));
-        properties.add(new Property("Button[id=r3Hotel, styleClass=button]''", r3Hotel, hotelQImages.get(13), hotelAImages.get(13)));
+        properties.add(new Property("Button[id=r1Base, styleClass=button]''", r1Base, baseQImages.get(11), baseAImages.get(11), getResourceImage("monopoly/graphs/12.png"), true));
+        properties.add(new Property("Button[id=r1House, styleClass=button]''", r1House, houseQImages.get(11), houseAImages.get(11), getResourceImage("monopoly/graphs/12.png"), true));
+        properties.add(new Property("Button[id=r1Hotel, styleClass=button]''", r1Hotel, hotelQImages.get(11), hotelAImages.get(11), getResourceImage("monopoly/graphs/12.png"), true));
+        properties.add(new Property("Button[id=r2Base, styleClass=button]''", r2Base, baseQImages.get(12), baseAImages.get(12), getResourceImage("monopoly/graphs/13.png"), false));
+        properties.add(new Property("Button[id=r2House, styleClass=button]''", r2House, houseQImages.get(12), houseAImages.get(12), getResourceImage("monopoly/graphs/13.png"), false));
+        properties.add(new Property("Button[id=r2Hotel, styleClass=button]''", r2Hotel, hotelQImages.get(12), hotelAImages.get(12), getResourceImage("monopoly/graphs/13.png"), false));
+        properties.add(new Property("Button[id=r3Base, styleClass=button]''", r3Base, baseQImages.get(13), baseAImages.get(13), getResourceImage("monopoly/graphs/14.png"), false));
+        properties.add(new Property("Button[id=r3House, styleClass=button]''", r3House, houseQImages.get(13), houseAImages.get(13), getResourceImage("monopoly/graphs/14.png"), false));
+        properties.add(new Property("Button[id=r3Hotel, styleClass=button]''", r3Hotel, hotelQImages.get(13), hotelAImages.get(13), getResourceImage("monopoly/graphs/14.png"), false));
 
-        properties.add(new Property("Button[id=y1Base, styleClass=button]''", y1Base, baseQImages.get(14), baseAImages.get(14), true));
-        properties.add(new Property("Button[id=y1House, styleClass=button]''", y1House, houseQImages.get(14), houseAImages.get(14), true));
-        properties.add(new Property("Button[id=y1Hotel, styleClass=button]''", y1Hotel, hotelQImages.get(14), hotelAImages.get(14), true));
-        properties.add(new Property("Button[id=y2Base, styleClass=button]''", y2Base, baseQImages.get(15), baseAImages.get(15), true));
-        properties.add(new Property("Button[id=y2House, styleClass=button]''", y2House, houseQImages.get(15), houseAImages.get(15), true));
-        properties.add(new Property("Button[id=y2Hotel, styleClass=button]''", y2Hotel, hotelQImages.get(15), hotelAImages.get(15), true));
-        properties.add(new Property("Button[id=y3Base, styleClass=button]''", y3Base, baseQImages.get(16), baseAImages.get(16)));
-        properties.add(new Property("Button[id=y3House, styleClass=button]''", y3House, houseQImages.get(16), houseAImages.get(16)));
-        properties.add(new Property("Button[id=y3Hotel, styleClass=button]''", y3Hotel, hotelQImages.get(16), hotelAImages.get(16)));
+        properties.add(new Property("Button[id=y1Base, styleClass=button]''", y1Base, baseQImages.get(14), baseAImages.get(14), getResourceImage("monopoly/graphs/15.png"), true));
+        properties.add(new Property("Button[id=y1House, styleClass=button]''", y1House, houseQImages.get(14), houseAImages.get(14), getResourceImage("monopoly/graphs/15.png"), true));
+        properties.add(new Property("Button[id=y1Hotel, styleClass=button]''", y1Hotel, hotelQImages.get(14), hotelAImages.get(14), getResourceImage("monopoly/graphs/15.png"), true));
+        properties.add(new Property("Button[id=y2Base, styleClass=button]''", y2Base, baseQImages.get(15), baseAImages.get(15), getResourceImage("monopoly/graphs/16.png"), true));
+        properties.add(new Property("Button[id=y2House, styleClass=button]''", y2House, houseQImages.get(15), houseAImages.get(15), getResourceImage("monopoly/graphs/16.png"), true));
+        properties.add(new Property("Button[id=y2Hotel, styleClass=button]''", y2Hotel, hotelQImages.get(15), hotelAImages.get(15), getResourceImage("monopoly/graphs/16.png"), true));
+        properties.add(new Property("Button[id=y3Base, styleClass=button]''", y3Base, baseQImages.get(16), baseAImages.get(16), getResourceImage("monopoly/graphs/17.png"), false));
+        properties.add(new Property("Button[id=y3House, styleClass=button]''", y3House, houseQImages.get(16), houseAImages.get(16), getResourceImage("monopoly/graphs/17.png"), false));
+        properties.add(new Property("Button[id=y3Hotel, styleClass=button]''", y3Hotel, hotelQImages.get(16), hotelAImages.get(16), getResourceImage("monopoly/graphs/17.png"), false));
 
         properties.add(new Property("Button[id=g1Base, styleClass=button]''", g1Base, baseQImages.get(17), baseAImages.get(17)));
         properties.add(new Property("Button[id=g1House, styleClass=button]''", g1House, houseQImages.get(17), houseAImages.get(17)));
         properties.add(new Property("Button[id=g1Hotel, styleClass=button]''", g1Hotel, hotelQImages.get(17), hotelAImages.get(17)));
-        properties.add(new Property("Button[id=g2Base, styleClass=button]''", g2Base, baseQImages.get(18), baseAImages.get(18)));
-        properties.add(new Property("Button[id=g2House, styleClass=button]''", g2House, houseQImages.get(18), houseAImages.get(18)));
-        properties.add(new Property("Button[id=g2Hotel, styleClass=button]''", g2Hotel, hotelQImages.get(18), hotelAImages.get(18)));
+        properties.add(new Property("Button[id=g2Base, styleClass=button]''", g2Base, baseQImages.get(18), baseAImages.get(18), getResourceImage("monopoly/graphs/19.png"), false));
+        properties.add(new Property("Button[id=g2House, styleClass=button]''", g2House, houseQImages.get(18), houseAImages.get(18), getResourceImage("monopoly/graphs/19.png"), false));
+        properties.add(new Property("Button[id=g2Hotel, styleClass=button]''", g2Hotel, hotelQImages.get(18), hotelAImages.get(18), getResourceImage("monopoly/graphs/19.png"), false));
         properties.add(new Property("Button[id=g3Base, styleClass=button]''", g3Base, baseQImages.get(19), baseAImages.get(19)));
         properties.add(new Property("Button[id=g3House, styleClass=button]''", g3House, houseQImages.get(19), houseAImages.get(19)));
         properties.add(new Property("Button[id=g3Hotel, styleClass=button]''", g3Hotel, hotelQImages.get(19), hotelAImages.get(19)));
@@ -281,10 +281,16 @@ public class MainController implements Initializable
     {
         ArrayList<Image> images = new ArrayList<>();
 
+        System.out.println(directory);
+
         for(int i = 1; i <= 22; i++)
         {
-//            images.add(getResourceImage("monopoly/" + directory + "/"+i+".png"));
-            images.add(getResourceImage("monopoly/" + directory + "/1.png"));
+            System.out.println(i);
+            
+            if(i == 15)
+                images.add(getResourceImage("monopoly/" + directory + "/1.png"));
+            else
+                images.add(getResourceImage("monopoly/" + directory + "/"+i+".png"));
         }
 
         return images;

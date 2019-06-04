@@ -73,12 +73,15 @@
          <children>
             <fx:define>
                <Image fx:id="btnImage" url="@CloseButton.png" />
+               <Image fx:id="asterisk" url="@asteriskSign.jpg" />
             </fx:define>
             <Button mnemonicParsing="false" onMouseClicked="#close" prefHeight="20" prefWidth="20">
                <graphic>
                   <ImageView image="$btnImage" fitWidth="20" fitHeight="20" preserveRatio="true"/>
                </graphic>
             </Button>
+
+            <ImageView fx:id="calcNeeded" image="$asterisk" fitWidth="20" fitHeight="20" preserveRatio="true" layoutX="500" />
 
             <Label alignment="CENTER" layoutX="105.0" layoutY="72.0" prefHeight="89.0" prefWidth="294.0" text="Question:">
                <font>
