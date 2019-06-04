@@ -15,13 +15,13 @@ public class Property
     private boolean requiresGraphic;
     private boolean calculatorAllowed;
 
-    public Property(String eventSource, Button button, Image question, Image answer, Image graphic, boolean requiresGraphic, boolean calculatorAllowed)
+    public Property(String eventSource, Button button, Image question, Image answer, Image graphic, boolean calculatorAllowed)
     {
         this.eventSource = eventSource;
         this.button = button;
         this.question = question;
         this.answer = answer;
-        this.requiresGraphic = requiresGraphic;
+        this.requiresGraphic = graphic != null;
         this.calculatorAllowed = calculatorAllowed;
 
         if(requiresGraphic)
@@ -32,12 +32,12 @@ public class Property
 
     public Property(String eventSource, Button button, Image question, Image answer, boolean calculatorAllowed)
     {
-        this(eventSource, button, question, answer, null, false, calculatorAllowed);
+        this(eventSource, button, question, answer, null, calculatorAllowed);
     }
 
     public Property(String eventSource, Button button, Image question, Image answer)
     {
-        this(eventSource, button, question, answer, null, false, false);
+        this(eventSource, button, question, answer, null, false);
     }
 
     public String getEventSource()
