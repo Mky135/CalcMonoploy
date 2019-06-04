@@ -280,17 +280,10 @@ public class MainController implements Initializable
     private ArrayList<Image> getImages(String directory)
     {
         ArrayList<Image> images = new ArrayList<>();
-
-        System.out.println(directory);
-
+        
         for(int i = 1; i <= 22; i++)
         {
-            System.out.println(i);
-            
-            if(i == 15)
-                images.add(getResourceImage("monopoly/" + directory + "/1.png"));
-            else
-                images.add(getResourceImage("monopoly/" + directory + "/"+i+".png"));
+            images.add(getResourceImage("monopoly/" + directory + "/"+i+".png"));
         }
 
         return images;
